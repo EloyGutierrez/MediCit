@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/inicio"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="INICIO"
+        android:iconTint="@color/colorPrimary"
+
+        />
+    <item
+        android:id="@+id/pidetucita"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="PIDE TU CITA" />
+    <item
+        android:id="@+id/buscatumedico"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="BUSCA TU MÉDICO" />
+    <item
+        android:id="@+id/miscitas"
+        android:icon="@drawable/ic_baseline_list_alt_24"
+        android:title="MIS CITAS" />
+    <item
+        android:id="@+id/consultatuseguro"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="CONSULTA TU SEGURO" />
+    <item
+        android:id="@+id/mi_cuenta"
+        android:icon="@drawable/ic_baseline_perm_identity_24"
+        android:title="MI CUENTA" />
+    <item
+        android:id="@+id/ayuda"
+        android:icon="@drawable/ic_baseline_help_outline_24"
+        android:title="AYUDA" />
+</menu>
