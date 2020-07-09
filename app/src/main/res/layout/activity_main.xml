@@ -6,16 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="178dp"
+        android:layout_width="117dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="137dp"
         android:background="@drawable/estilos_cajas_de_texto"
-        android:onClick="principal"
-        android:text="Button"
+        android:onClick="Informacionhospital"
+        android:text="CONTINUAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="366dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4"
+        app:srcCompat="@mipmap/logomedicit" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="305dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:text="                                 MediCit                                            Es una aplicación de agendas médicas que busca facilitar la gestión de agendar y confirmar las citas de forma automática, formal y respetuosa hacia el paciente."
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/content_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/drawer_toolbar"
+        android:layout_width="405dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
