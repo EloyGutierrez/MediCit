@@ -16,4 +16,8 @@ public void Principal(View view){
         Intent i =new Intent(this, PrincipalActivity.class);
         startActivity(i);
 }
+    public void Olvidemicontraseña(View view){
+        Intent i =new Intent(this, Olvidemicontraseña.class);
+        startActivity(i);
+    }
 }

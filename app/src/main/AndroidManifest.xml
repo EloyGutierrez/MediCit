@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".InformacionhospitalActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".Olvidemicontraseña" />
     </application>
 
 </manifest>
