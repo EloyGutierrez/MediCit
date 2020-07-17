@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     public void Olvidemicontraseña(View view){
         Intent i = new Intent(this,Olvidemicontraseña.class);
         startActivity(i);
