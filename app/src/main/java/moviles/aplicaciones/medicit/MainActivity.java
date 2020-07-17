@@ -20,16 +20,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void principal(View view){
-        Intent i = new Intent(this,PrincipalActivity.class);
+    public void Informacionhospital(View view){
+        Intent i = new Intent(this,InformacionhospitalActivity.class);
         startActivity(i);
     }
 
 
-    public void Olvidemicontraseña(View view){
-        Intent i = new Intent(this,Olvidemicontraseña.class);
-        startActivity(i);
-    }
+
 
 
 }

@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView14"
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INFORMACIÓN DEL HOSPITAL HIPÓLITO UNANUE"
+        android:layout_marginBottom="112dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:onClick="Login"
+        android:text="CONTINUAR"
         android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="47dp"
         android:background="@drawable/estilos_cajas_de_texto"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
         app:srcCompat="@drawable/hipolito"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="153dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="El Hospital Hipólito Unanue, es un Órgano Desconcentrado de la
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="47dp"
+        android:justificationMode="inter_word"
+        android:text="Es un Órgano Desconcentrado de la
 Dirección de Salud IV Lima Este del Ministerio de Salud,
 encargado de la atención especializada,
 prevención y disminución de riesgos, formación y especialización
@@ -38,11 +51,25 @@ de los recursos humanos, así como docencia e investigación en el
 ámbito de responsabilidad asignado y a nivel nacional a través de las
 Unidades Productoras de Servicios
 "
-       android:justificationMode="inter_word"
-
+        android:textAlignment="center"
         android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        tools:ignore="MissingConstraints" />
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="407dp" />
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="53dp"
+        android:text="INFORMACIÓN DEL HOSPITAL HIPÓLITO UNANUE"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
