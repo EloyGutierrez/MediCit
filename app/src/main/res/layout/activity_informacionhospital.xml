@@ -20,6 +20,7 @@
         android:id="@+id/imageView4"
         android:layout_width="300dp"
         android:layout_height="200dp"
+        android:background="@drawable/estilos_cajas_de_texto"
         app:srcCompat="@drawable/hipolito"
         tools:layout_editor_absoluteX="55dp"
         tools:layout_editor_absoluteY="153dp"
@@ -29,8 +30,19 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="427dp"
-        tools:ignore="MissingConstraints" />
+        android:text="El Hospital Hipólito Unanue, es un Órgano Desconcentrado de la
+Dirección de Salud IV Lima Este del Ministerio de Salud,
+encargado de la atención especializada,
+prevención y disminución de riesgos, formación y especialización
+de los recursos humanos, así como docencia e investigación en el
+ámbito de responsabilidad asignado y a nivel nacional a través de las
+Unidades Productoras de Servicios
+"
+       android:justificationMode="inter_word"
+
+        android:textColor="@color/colorPrimary"
+
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="407dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
