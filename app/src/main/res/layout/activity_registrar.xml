@@ -9,10 +9,9 @@
     <EditText
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="22dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Apellido paterno"
@@ -22,13 +21,14 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.862" />
 
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="19dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Nro. de documento"
@@ -38,111 +38,180 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.243" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="23dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Apellido materno"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintBottom_toTopOf="@+id/idspinnerSexo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.539" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="22dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Nombres"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="19dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:ems="10"
+        android:hint="Año"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idspinnermes"
+        app:layout_constraintTop_toBottomOf="@+id/idspinnerSexo"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName8"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="166dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:ems="10"
+        android:hint="Correo Electronico"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
         app:srcCompat="@drawable/logomedicit" />
 
     <Spinner
         android:id="@+id/idspinnerSexo"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="40dp"
 
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="217dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:background="@drawable/estilos_cajas_de_texto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <Spinner
+        android:id="@+id/idspinnermes"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName7"
+        app:layout_constraintStart_toEndOf="@+id/idspinnerdia"
+        app:layout_constraintTop_toBottomOf="@+id/idspinnerSexo"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <Spinner
+        android:id="@+id/idspinnerdia"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/idspinnermes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="94dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginTop="129dp"
+        android:layout_marginBottom="20dp"
         android:text="Hospital Hipólito Unanue"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="22dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="148dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:text="DNI"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.243" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="70dp"
+        android:text="Fecha de nacimiento"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="61dp"
         android:text="Sexo"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/idspinnerSexo"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
