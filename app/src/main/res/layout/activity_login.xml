@@ -91,7 +91,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="121dp"
-        android:onClick="Registrarcuenta"
+        android:onClick="Registrar"
         android:text="No tienes cuenta? Ingresa aquí."
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"

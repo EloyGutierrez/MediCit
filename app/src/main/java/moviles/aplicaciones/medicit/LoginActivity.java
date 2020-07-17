@@ -20,4 +20,8 @@ public void Principal(View view){
         Intent i =new Intent(this, Olvidemicontraseña.class);
         startActivity(i);
     }
+    public void Registrar(View view){
+        Intent i =new Intent(this, RegistrarActivity.class);
+        startActivity(i);
+    }
 }
