@@ -25,22 +25,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void login(View view){
-        Intent i =new Intent(this,Login.class);
-        startActivity(i);
-    }
 
-    public void Informacionhospital(View view){
-        Intent i = new Intent(this,InformacionHospital.class);
-        startActivity(i);
-    }
+
+
     public void Olvidemicontraseña(View view){
         Intent i = new Intent(this,Olvidemicontraseña.class);
         startActivity(i);
     }
-    public void Registrarcuenta(View view){
-        Intent i = new Intent(this,Registrarcuenta.class);
-        startActivity(i);
-    }
+
 
 }

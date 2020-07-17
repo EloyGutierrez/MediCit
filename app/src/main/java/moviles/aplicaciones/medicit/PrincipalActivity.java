@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentTransaction;
 import moviles.aplicaciones.medicit.interfaces.IComunicaFragments;
 
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
