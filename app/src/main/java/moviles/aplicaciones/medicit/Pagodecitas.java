@@ -1,4 +1,12 @@
 package moviles.aplicaciones.medicit;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class Pagodecitas {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+public class Pagodecitas extends Fragment{
+
 }
