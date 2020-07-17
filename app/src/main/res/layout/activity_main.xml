@@ -14,7 +14,7 @@
         android:layout_marginBottom="143dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:onClick="Informacionhospital"
-        android:text="CONTINUAR"
+        android:text="INICIAR"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
