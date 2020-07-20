@@ -9,6 +9,8 @@
         <item>Masculino</item>
         <item>Femenino</item>
     </string-array>
+
+
     <string-array name="combo_seguro">
         <item>Selecciona</item>
         <item>Ninguno</item>
@@ -69,6 +71,30 @@
         <item>29</item>
         <item>30</item>
         <item>31</item>
+    </string-array>
+
+    <string-array name="combo_especialidad">
+        <item>Selecciona</item>
+        <item>Cardiología</item>
+        <item>Cirugía General</item>
+        <item>Ciruagía Toraxica y Cardiovascular </item>
+        <item>Dermatología</item>
+        <item>Emergencia</item>
+        <item>Endoctrinología</item>
+        <item>Gastroenterología</item>
+        <item> Ginecología y Obstetricia</item>
+        <item>Medicina</item>
+        <item>Neumología</item>
+        <item>Nutrición</item>
+        <item>Odontología</item>
+        <item>Oftalmología</item>
+        <item>Oncología</item>
+        <item>Ortopedia y Traumatología</item>
+        <item>Pediatría</item>
+        <item>Podología</item>
+        <item>Psicología</item>
+        <item>Psiquiatría</item>
+        <item>Urología</item>
     </string-array>
 
 </resources>
