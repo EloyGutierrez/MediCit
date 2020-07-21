@@ -39,9 +39,9 @@
                 android:layout_height="40dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:text="DNI"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="50dp"
-                android:textColor="@color/colorPrimary"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="168dp" />
@@ -52,6 +52,7 @@
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
                 android:hint="Nro. de documento"
+                android:textColor="@color/colorPrimary"
                 android:layout_marginLeft="215dp"
                 android:layout_marginTop="-40dp"
                 android:inputType="number"
@@ -167,6 +168,7 @@
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
                 android:hint="Año"
+                android:textColor="@color/colorPrimary"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/colorPrimary" />
 
@@ -194,6 +196,7 @@
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
                 android:hint="Celular"
+                android:textColor="@color/colorPrimary"
                 android:inputType="number"
                 android:textColorHint="@color/colorPrimary"
                 tools:layout_editor_absoluteX="115dp"
@@ -229,6 +232,7 @@
                 android:layout_marginTop="20dp"
                 android:textColorHint="@color/colorPrimary"
                 android:background="@drawable/estilos_cajas_de_texto"
+                android:textColor="@color/colorPrimary"
                 android:hint="Contraseña"
                 android:ems="10"
                 android:inputType="textPassword" />
@@ -240,6 +244,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:hint="Repetir Contraseña"
+                android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimary"
                 android:ems="10"
                 android:inputType="textPassword" />
