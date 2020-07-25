@@ -71,18 +71,21 @@ public class RegistrarActivity extends AppCompatActivity {
         values.put(Utilidades.CAMPO_SEGURO,comboseguro.getItemAtPosition(comboseguro.getSelectedItemPosition()).toString());
         values.put(Utilidades.CAMPO_CONTRASENIA,edtcontrasenia.getText().toString());
 
+/**
+
 
         final ContentValues valuesmedicos=new ContentValues();
-        valuesmedicos.put(Utilidades.MEDICO_ID,edtdni.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_NOMBRE,edtnombre.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_APELLIDOPATERNO,edtapellidopaterno.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_APELLIDOMATERNO,edtapellidomaterno.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_ESPECIALIDAD,comboseguro.getItemAtPosition(comboseguro.getSelectedItemPosition()).toString());
-        valuesmedicos.put(Utilidades.MEDICO_SEXO,combosexo.getItemAtPosition(combosexo.getSelectedItemPosition()).toString());
-        valuesmedicos.put(Utilidades.MEDICO_FECHADENACIMIENTO,edtfechadenacimiento.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_CORREO,edtcorreo.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_DIRECCION,edtcontrasenia.getText().toString());
-        valuesmedicos.put(Utilidades.MEDICO_CELULAR,edtcelular.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_ID,1);
+        valuesmedicos.put(Utilidades.MEDICO_NOMBRE,"mario");
+        valuesmedicos.put(Utilidades.MEDICO_APELLIDOPATERNO,"salgado");
+        valuesmedicos.put(Utilidades.MEDICO_APELLIDOMATERNO,"garcia");
+        valuesmedicos.put(Utilidades.MEDICO_ESPECIALIDAD,"psicologo");
+        valuesmedicos.put(Utilidades.MEDICO_SEXO,"masculino");
+        valuesmedicos.put(Utilidades.MEDICO_FECHADENACIMIENTO,"18/10/1889");
+        valuesmedicos.put(Utilidades.MEDICO_CORREO,"mariosalgadogarcia@gmail.com");
+        valuesmedicos.put(Utilidades.MEDICO_DIRECCION,"av. las carmelas 254");
+        valuesmedicos.put(Utilidades.MEDICO_CELULAR,45);
+ */
 
         //string para saber si las contraseñas son iguales vara validar
         String contra = edtcontrasenia.getText().toString();
@@ -90,9 +93,13 @@ public class RegistrarActivity extends AppCompatActivity {
 
         if(contra.equals(contras)){
             Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_DNI,values);
+            //Long idResultantemedicos=dbmedicos.insert(Utilidades.TABLA_MEDICO,Utilidades.MEDICO_ID,valuesmedicos);
             Toast.makeText(getApplicationContext(),"Id Registro: "+idResultante,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),"Id Registromedico: "+idResultantemedicos,Toast.LENGTH_SHORT).show();
             System.out.println(idResultante);
             System.out.println(values);
+          //  System.out.println(idResultantemedicos);
+            //System.out.println(valuesmedicos);
             Intent i = new Intent(this,PrincipalActivity.class);
             startActivity(i);
             db.close();
