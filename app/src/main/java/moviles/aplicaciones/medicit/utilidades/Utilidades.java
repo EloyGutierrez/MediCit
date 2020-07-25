@@ -15,9 +15,24 @@ public class Utilidades {
     public final static String CAMPO_SEGURO = "seguro";
     public final static String CAMPO_CONTRASENIA = "contrasenia";
 
+    //constantes campos para tabla medicos
+
+    public final static String TABLA_MEDICO = "medicos";
+    public final static String MEDICO_ID = "id";
+    public final static String MEDICO_NOMBRE= "nombre";
+    public final static String MEDICO_APELLIDOPATERNO = "apellidopaterno";
+    public final static String MEDICO_APELLIDOMATERNO = "apellidomaterno";
+    public final static String MEDICO_ESPECIALIDAD = "especialidad";
+    public final static String MEDICO_SEXO = "sexo";
+    public final static String MEDICO_FECHADENACIMIENTO = "fechadenacimiento";
+    public final static String MEDICO_DIRECCION = "direccion";
+    public final static String MEDICO_CORREO = "correo";
+    public final static String MEDICO_CELULAR = "celular";
 
 
 
-    public static final String CREAR_TABLA_USUARIO = "CREATE TABLE "+TABLA_USUARIO+"("+CAMPO_DNI+" INTEGER, "+CAMPO_NOMBRE+" TEXT, "+CAMPO_APELLIDOPATERNO+" TEXT, "+CAMPO_APELLIDOMATERNO+" TEXT, "+CAMPO_SEXO+" TEXT, "+CAMPO_FECHADENACIMIENTO+" DATE, "+CAMPO_CORREO+" TEXT, "+CAMPO_CELULAR+" INTEGER, "+CAMPO_SEGURO+" TEXT, "+CAMPO_CONTRASENIA+" TEXT)";
+
+    public static final String CREAR_TABLA_USUARIO = "CREATE TABLE "+TABLA_USUARIO+"("+CAMPO_DNI+" INTEGER NOT NULL PRIMARY KEY, "+CAMPO_NOMBRE+" TEXT, "+CAMPO_APELLIDOPATERNO+" TEXT, "+CAMPO_APELLIDOMATERNO+" TEXT, "+CAMPO_SEXO+" TEXT, "+CAMPO_FECHADENACIMIENTO+" DATE, "+CAMPO_CORREO+" TEXT, "+CAMPO_CELULAR+" INTEGER, "+CAMPO_SEGURO+" TEXT, "+CAMPO_CONTRASENIA+" TEXT)";
+    public static final String CREAR_TABLA_MEDICO = "CREATE TABLE "+TABLA_MEDICO+"("+MEDICO_ID+" INTEGER PRIMARY KEY AUTO_INCREMENT, "+MEDICO_NOMBRE+" TEXT, "+MEDICO_APELLIDOPATERNO+" TEXT, "+MEDICO_APELLIDOMATERNO+" TEXT, "+MEDICO_ESPECIALIDAD+" TEXT, "+MEDICO_SEXO+" TEXT, "+MEDICO_FECHADENACIMIENTO+" DATE, "+MEDICO_CORREO+" TEXT, "+MEDICO_DIRECCION+" TEXT, "+MEDICO_CELULAR+" INTEGER)";
 
 }

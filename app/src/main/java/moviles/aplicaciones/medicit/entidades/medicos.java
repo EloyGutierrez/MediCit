@@ -8,17 +8,19 @@ public class medicos {
     private String apellidopaterno;
     private String apellidomaterno;
     private String especialidad;
+    private String sexo;
     private Date fechadenacimiento;
     private String correo;
     private String direccion;
     private String celular;
 
-    public medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String especialidad, Date fechadenacimiento, String correo, String direccion, String celular) {
+    public medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
         this.id = id;
         this.nombre = nombre;
         this.apellidopaterno = apellidopaterno;
         this.apellidomaterno = apellidomaterno;
         this.especialidad = especialidad;
+        this.sexo = sexo;
         this.fechadenacimiento = fechadenacimiento;
         this.correo = correo;
         this.direccion = direccion;
@@ -63,6 +65,14 @@ public class medicos {
 
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public Date getFechadenacimiento() {

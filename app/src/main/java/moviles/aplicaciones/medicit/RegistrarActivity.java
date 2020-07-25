@@ -52,9 +52,13 @@ public class RegistrarActivity extends AppCompatActivity {
 
 
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
+        ConexionSQLiteHelper con=new ConexionSQLiteHelper(this,"bd_medicos",null,1);
 
+        //abriendo la base de datos para editar
         SQLiteDatabase db=conn.getWritableDatabase();
+        SQLiteDatabase dbmedicos=con.getWritableDatabase();
 
+        //insertando los datos del formulario a los campos de la base de datos
         final ContentValues values=new ContentValues();
         values.put(Utilidades.CAMPO_DNI,edtdni.getText().toString());
         values.put(Utilidades.CAMPO_NOMBRE,edtnombre.getText().toString());
@@ -67,6 +71,20 @@ public class RegistrarActivity extends AppCompatActivity {
         values.put(Utilidades.CAMPO_SEGURO,comboseguro.getItemAtPosition(comboseguro.getSelectedItemPosition()).toString());
         values.put(Utilidades.CAMPO_CONTRASENIA,edtcontrasenia.getText().toString());
 
+
+        final ContentValues valuesmedicos=new ContentValues();
+        valuesmedicos.put(Utilidades.MEDICO_ID,edtdni.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_NOMBRE,edtnombre.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_APELLIDOPATERNO,edtapellidopaterno.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_APELLIDOMATERNO,edtapellidomaterno.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_ESPECIALIDAD,comboseguro.getItemAtPosition(comboseguro.getSelectedItemPosition()).toString());
+        valuesmedicos.put(Utilidades.MEDICO_SEXO,combosexo.getItemAtPosition(combosexo.getSelectedItemPosition()).toString());
+        valuesmedicos.put(Utilidades.MEDICO_FECHADENACIMIENTO,edtfechadenacimiento.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_CORREO,edtcorreo.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_DIRECCION,edtcontrasenia.getText().toString());
+        valuesmedicos.put(Utilidades.MEDICO_CELULAR,edtcelular.getText().toString());
+
+        //string para saber si las contraseñas son iguales vara validar
         String contra = edtcontrasenia.getText().toString();
         String contras = edtcontraseniaa.getText().toString();
 
