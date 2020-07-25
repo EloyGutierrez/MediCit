@@ -2,7 +2,7 @@ package moviles.aplicaciones.medicit.entidades;
 
 import java.util.Date;
 
-public class usuario {
+public class Usuario {
     private Integer dni;
     private String nombre;
     private String apellidopaterno;
@@ -14,7 +14,7 @@ public class usuario {
     private String seguro;
     private String contrasenia;
 
-    public usuario(Integer dni, String nombre, String apellidopaterno, String apellidomaterno, String sexo, Date fechadenacimiento, String correo, Integer celular, String seguro, String contrasenia) {
+    public Usuario(Integer dni, String nombre, String apellidopaterno, String apellidomaterno, String sexo, Date fechadenacimiento, String correo, Integer celular, String seguro, String contrasenia) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidopaterno = apellidopaterno;
