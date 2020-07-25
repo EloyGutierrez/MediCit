@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -36,6 +37,7 @@ public class RegistrarActivity extends AppCompatActivity {
 
         combosexo = findViewById(R.id.idspinnerSexo);
         comboseguro = findViewById(R.id.idspinnerseguro);
+
         //array para el spinner de sexo
         ArrayAdapter<CharSequence> sexoadapter= ArrayAdapter.createFromResource(this,R.array.combo_sexo,R.layout.spinner_item_estilos);
         combosexo.setAdapter(sexoadapter);
@@ -44,35 +46,41 @@ public class RegistrarActivity extends AppCompatActivity {
         comboseguro.setAdapter(seguroadapter);
 
     }
+
+
     public void Principal(View view){
+
 
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
 
         SQLiteDatabase db=conn.getWritableDatabase();
 
-        ContentValues values=new ContentValues();
+        final ContentValues values=new ContentValues();
         values.put(Utilidades.CAMPO_DNI,edtdni.getText().toString());
         values.put(Utilidades.CAMPO_NOMBRE,edtnombre.getText().toString());
         values.put(Utilidades.CAMPO_APELLIDOPATERNO,edtapellidopaterno.getText().toString());
         values.put(Utilidades.CAMPO_APELLIDOMATERNO,edtapellidomaterno.getText().toString());
-        values.put(Utilidades.CAMPO_SEXO,combosexo.getItemAtPosition(2).toString());
+        values.put(Utilidades.CAMPO_SEXO,combosexo.getItemAtPosition(combosexo.getSelectedItemPosition()).toString());
         values.put(Utilidades.CAMPO_FECHADENACIMIENTO,edtfechadenacimiento.getText().toString());
         values.put(Utilidades.CAMPO_CORREO,edtcorreo.getText().toString());
         values.put(Utilidades.CAMPO_CELULAR,edtcelular.getText().toString());
-        values.put(Utilidades.CAMPO_SEGURO,comboseguro.getItemAtPosition(2).toString());
+        values.put(Utilidades.CAMPO_SEGURO,comboseguro.getItemAtPosition(comboseguro.getSelectedItemPosition()).toString());
         values.put(Utilidades.CAMPO_CONTRASENIA,edtcontrasenia.getText().toString());
 
+        String contra = edtcontrasenia.getText().toString();
+        String contras = edtcontraseniaa.getText().toString();
 
-
-        Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_DNI,values);
-        Toast.makeText(getApplicationContext(),"Id Registro: "+idResultante,Toast.LENGTH_SHORT).show();
-        System.out.println(idResultante);
-        Intent i = new Intent(this,PrincipalActivity.class);
-        startActivity(i);
-        db.close();
-
-
-
+        if(contra.equals(contras)){
+            Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_DNI,values);
+            Toast.makeText(getApplicationContext(),"Id Registro: "+idResultante,Toast.LENGTH_SHORT).show();
+            System.out.println(idResultante);
+            System.out.println(values);
+            Intent i = new Intent(this,PrincipalActivity.class);
+            startActivity(i);
+            db.close();
+        }else {
+            Toast.makeText(getApplicationContext(),"LAS CONTRASEÑAS NO COINCIDEN: ",Toast.LENGTH_SHORT).show();
+        }
 
 
     }
