@@ -46,7 +46,30 @@ public class RegistrarActivity extends AppCompatActivity {
     }
     public void Principal(View view){
 
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
 
+        SQLiteDatabase db=conn.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+        values.put(Utilidades.CAMPO_DNI,edtdni.getText().toString());
+        values.put(Utilidades.CAMPO_NOMBRE,edtnombre.getText().toString());
+        values.put(Utilidades.CAMPO_APELLIDOPATERNO,edtapellidopaterno.getText().toString());
+        values.put(Utilidades.CAMPO_APELLIDOMATERNO,edtapellidomaterno.getText().toString());
+        values.put(Utilidades.CAMPO_SEXO,combosexo.getItemAtPosition(2).toString());
+        values.put(Utilidades.CAMPO_FECHADENACIMIENTO,edtfechadenacimiento.getText().toString());
+        values.put(Utilidades.CAMPO_CORREO,edtcorreo.getText().toString());
+        values.put(Utilidades.CAMPO_CELULAR,edtcelular.getText().toString());
+        values.put(Utilidades.CAMPO_SEGURO,comboseguro.getItemAtPosition(2).toString());
+        values.put(Utilidades.CAMPO_CONTRASENIA,edtcontrasenia.getText().toString());
+
+
+
+        Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_DNI,values);
+        Toast.makeText(getApplicationContext(),"Id Registro: "+idResultante,Toast.LENGTH_SHORT).show();
+        System.out.println(idResultante);
+        Intent i = new Intent(this,PrincipalActivity.class);
+        startActivity(i);
+        db.close();
 
 
 
