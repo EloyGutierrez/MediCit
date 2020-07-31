@@ -46,7 +46,7 @@
                 tools:layout_editor_absoluteX="12dp"
                 tools:layout_editor_absoluteY="168dp" />
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/edtdni"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:background="@drawable/estilos_cajas_de_texto"
@@ -61,7 +61,7 @@
                 tools:layout_editor_absoluteY="643dp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/edtnombre"
                 android:layout_width="387dp"
                 android:layout_height="40dp"
                 android:background="@drawable/estilos_cajas_de_texto"
@@ -74,7 +74,7 @@
                 android:textColorHint="@color/colorPrimary" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/edtapellidopaterno"
                 android:layout_width="387dp"
                 android:layout_height="40dp"
                 android:background="@drawable/estilos_cajas_de_texto"
@@ -87,7 +87,7 @@
                 android:textColorHint="@color/colorPrimary"
                 tools:ignore="MissingConstraints" />
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/edtapellidomaterno"
                 android:layout_width="387dp"
                 android:layout_height="40dp"
                 android:background="@drawable/estilos_cajas_de_texto"
@@ -132,24 +132,20 @@
                 tools:layout_editor_absoluteX="25dp"
                 tools:layout_editor_absoluteY="587dp" />
 
-            <Spinner
-                android:id="@+id/idspinnerdia"
-                android:layout_width="100dp"
+            <EditText
+                android:id="@+id/edtfechadenacimiento"
+                android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
+                android:hint="fecha de nacimiento"
                 android:background="@drawable/estilos_cajas_de_texto"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="467dp" />
-            <Spinner
-                android:id="@+id/idspinnermes"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="145dp"
-                android:layout_marginTop="-40dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                tools:layout_editor_absoluteX="284dp"
-                tools:layout_editor_absoluteY="703dp" />
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                android:ems="10"
+                android:inputType="date" />
+
+
 
 
             <androidx.constraintlayout.widget.Barrier
@@ -160,20 +156,7 @@
                 tools:layout_editor_absoluteX="411dp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="285dp"
-                android:layout_marginTop="-40dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                android:ems="10"
-                android:hint="Año"
-                android:textColor="@color/colorPrimary"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/colorPrimary" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/edtcorreo"
                 android:layout_width="382dp"
                 android:layout_height="40dp"
                 android:background="@drawable/estilos_cajas_de_texto"
@@ -188,7 +171,7 @@
                 tools:layout_editor_absoluteY="654dp" />
 
             <EditText
-                android:id="@+id/editTextNumber3"
+                android:id="@+id/edtcelular"
                 android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -225,7 +208,7 @@
                 tools:layout_editor_absoluteY="467dp" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/edtcontrasenia"
                 android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -237,7 +220,7 @@
                 android:ems="10"
                 android:inputType="textPassword" />
             <EditText
-                android:id="@+id/editTextTextPassword1"
+                android:id="@+id/edtcontraseniaa"
                 android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -249,8 +232,9 @@
                 android:ems="10"
                 android:inputType="textPassword" />
 
+
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/btnregistrar"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="100dp"
