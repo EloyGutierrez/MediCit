@@ -13,7 +13,7 @@ import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtusuario, edtcontraseña;
-    private Cursor fila,fola;
+    private Cursor fila;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public void Principal(View view){
     System.out.println("usuario"+ USUARIO_DNI);
     System.out.println("password"+ USUARIO_CONTRASENIA);
     fila = db.rawQuery( "SELECT dni,contrasenia FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
-    System.out.println("FILA   : "+ fila);
+
 
     if(fila.moveToFirst()){
         int usuario=Integer.parseInt(fila.getString(0));
