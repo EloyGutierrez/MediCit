@@ -27,30 +27,36 @@
         android:text="BUSCA TU MÉDICO"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="241dp" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="200dp"
         android:layout_height="39dp"
-        android:textColor="@color/colorPrimary"
+        android:layout_marginStart="4dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:hint="Especialidad"
+        android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button8"
         android:layout_width="100dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:text="BUSCAR"
         android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="328dp" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
