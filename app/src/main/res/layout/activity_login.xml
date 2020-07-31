@@ -19,11 +19,11 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/registro_contraseña"
+        app:layout_constraintTop_toBottomOf="@+id/edtcontraseña"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/registro_contraseña"
+        android:id="@+id/edtcontraseña"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
@@ -38,11 +38,11 @@
         app:layout_constraintBottom_toTopOf="@+id/registrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registro_nombres"
+        app:layout_constraintTop_toBottomOf="@+id/edtusuario"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/registro_nombres"
+        android:id="@+id/edtusuario"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
@@ -51,10 +51,10 @@
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Nombre de usuario"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textColor="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/registro_contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/edtcontraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -66,8 +66,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="79dp"
         android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/registro_nombres"
-        app:layout_constraintEnd_toEndOf="@+id/registro_nombres"
+        app:layout_constraintBottom_toTopOf="@+id/edtusuario"
+        app:layout_constraintEnd_toEndOf="@+id/edtusuario"
         app:layout_constraintTop_toBottomOf="@+id/include6"
         app:srcCompat="@mipmap/logomedicit"
         tools:ignore="MissingConstraints" />
