@@ -8,12 +8,12 @@
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="169dp"
-        android:layout_height="191dp"
+        android:layout_height="0dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginBottom="480dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,33 +24,42 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="63dp"
         android:text="BUSCA TU MÉDICO"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="241dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="200dp"
-        android:layout_height="39dp"
-        android:textColor="@color/colorPrimary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="364dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:hint="Especialidad"
+        android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="21dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:text="BUSCAR"
         android:textColor="@color/colorPrimary"
-        tools:layout_editor_absoluteX="290dp"
-        tools:layout_editor_absoluteY="328dp" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView29"
+        app:layout_constraintTop_toTopOf="@+id/textView29" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

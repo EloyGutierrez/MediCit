@@ -7,7 +7,8 @@
     tools:context=".RegistrarActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,39 +41,12 @@
                 tools:layout_editor_absoluteX="128dp"
                 tools:layout_editor_absoluteY="129dp" />
 
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="180dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                android:text="DNI"
-                android:textColor="@color/colorPrimary"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="12dp"
-                tools:layout_editor_absoluteY="168dp" />
-
-            <EditText
-                android:id="@+id/edtdni"
-                android:layout_width="180dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="215dp"
-                android:layout_marginTop="-40dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                android:ems="10"
-                android:hint="Nro. de documento"
-                android:inputType="number"
-                android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary"
-                tools:layout_editor_absoluteX="102dp"
-                tools:layout_editor_absoluteY="643dp" />
 
             <EditText
                 android:id="@+id/edtnombre"
-                android:layout_width="387dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -83,9 +57,9 @@
 
             <EditText
                 android:id="@+id/edtapellidopaterno"
-                android:layout_width="387dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -97,9 +71,9 @@
 
             <EditText
                 android:id="@+id/edtapellidomaterno"
-                android:layout_width="387dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -108,45 +82,51 @@
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimary" />
 
+
+            <EditText
+                android:id="@+id/edtdni"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/estilos_cajas_de_texto"
+                android:ems="10"
+                android:hint="Nro. de documento"
+                android:inputType="number"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                tools:layout_editor_absoluteX="102dp"
+                tools:layout_editor_absoluteY="643dp" />
+
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:text="Sexo"
                 android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="603dp" />
 
             <Spinner
                 android:id="@+id/idspinnerSexo"
-                android:layout_width="380dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="310dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 tools:layout_editor_absoluteX="193dp"
                 tools:layout_editor_absoluteY="621dp" />
 
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Fecha de nacimiento"
-                android:textColor="@color/colorPrimary"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="587dp" />
 
             <EditText
                 android:id="@+id/edtfechadenacimiento"
-                android:layout_width="380dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -165,9 +145,9 @@
 
             <EditText
                 android:id="@+id/edtcorreo"
-                android:layout_width="382dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -180,9 +160,9 @@
 
             <EditText
                 android:id="@+id/edtcelular"
-                android:layout_width="380dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -193,33 +173,12 @@
                 tools:layout_editor_absoluteX="115dp"
                 tools:layout_editor_absoluteY="694dp" />
 
-            <TextView
-                android:id="@+id/textView265"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:text="Seguro / Plan de Salud"
-                android:textColor="@color/colorPrimary"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="587dp" />
-
-            <Spinner
-                android:id="@+id/idspinnerseguro"
-                android:layout_width="380dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="467dp" />
 
             <EditText
                 android:id="@+id/edtcontrasenia"
-                android:layout_width="380dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
@@ -230,13 +189,13 @@
 
             <EditText
                 android:id="@+id/edtcontraseniaa"
-                android:layout_width="380dp"
+                android:layout_width="310dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/estilos_cajas_de_texto"
                 android:ems="10"
-                android:hint="Repetir Contraseña"
+                android:hint="Confirmar Contraseña"
                 android:inputType="textPassword"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorPrimary" />
@@ -258,13 +217,6 @@
 
 
     </ScrollView>
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
