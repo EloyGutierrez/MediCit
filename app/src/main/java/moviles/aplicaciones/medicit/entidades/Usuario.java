@@ -27,6 +27,10 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
+    public Usuario() {
+
+    }
+
     public Integer getDni() {
         return dni;
     }
