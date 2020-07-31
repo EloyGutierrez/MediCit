@@ -17,6 +17,7 @@ public class Utilidades {
     public final static String CAMPO_SEGURO = "seguro";
     public final static String CAMPO_CONTRASENIA = "contrasenia";
 
+
     //constantes campos para tabla medicos
 
     public final static String TABLA_MEDICO = "medicos";
