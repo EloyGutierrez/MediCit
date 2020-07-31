@@ -8,11 +8,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -98,12 +95,27 @@
                 tools:layout_editor_absoluteX="102dp"
                 tools:layout_editor_absoluteY="643dp" />
 
+            <Spinner
+                android:id="@+id/idspinnerespecialidad"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="88dp"
+                android:background="@drawable/estilos_cajas_de_texto"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                tools:ignore="MissingConstraints" />
+
+
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="-70dp"
                 android:text="Sexo"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
@@ -120,7 +132,6 @@
                 android:background="@drawable/estilos_cajas_de_texto"
                 tools:layout_editor_absoluteX="193dp"
                 tools:layout_editor_absoluteY="621dp" />
-
 
             <EditText
                 android:id="@+id/edtfechadenacimiento"
