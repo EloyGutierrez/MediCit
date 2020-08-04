@@ -12,7 +12,8 @@
         android:layout_height="226dp"
         app:srcCompat="@drawable/logomedicit"
         tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="-35dp" />
+        tools:layout_editor_absoluteY="-35dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -20,41 +21,34 @@
         android:layout_height="97dp"
         app:srcCompat="@drawable/ic_baseline_perm_identity_24"
         tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="192dp" />
+        tools:layout_editor_absoluteY="192dp"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="143dp"
-        android:layout_height="29dp"
-        android:text="Foto de perfil"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="312dp" />
-
-    <TextView
-        android:id="@+id/textView27"
+    <EditText
+        android:id="@+id/editTextTextPersonName"
         android:layout_width="230dp"
         android:layout_height="44dp"
         android:background="@drawable/estilos_cajas_de_texto"
+        android:textColorHint="@color/colorPrimary"
+        android:ems="10"
+        android:inputType="textPersonName"
         android:hint="Nombres"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="356dp" />
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="341dp"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView28"
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
         android:layout_width="230dp"
-        android:layout_height="42dp"
-        android:background="@drawable/estilos_cajas_de_texto"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
         android:hint="Apellidos"
-        android:textColor="@color/colorPrimary"
+        android:background="@drawable/estilos_cajas_de_texto"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="413dp" />
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="412dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -68,7 +62,8 @@
         android:textColorHint="@color/colorPrimary"
         android:textSize="18dp"
         tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="472dp" />
+        tools:layout_editor_absoluteY="472dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextNumber7"
@@ -82,7 +77,8 @@
         android:textColorHint="@color/colorPrimary"
         android:textSize="18dp"
         tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="528dp" />
+        tools:layout_editor_absoluteY="528dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button7"
@@ -93,6 +89,9 @@
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
         tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="597dp" />
+        tools:layout_editor_absoluteY="597dp"
+        tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
