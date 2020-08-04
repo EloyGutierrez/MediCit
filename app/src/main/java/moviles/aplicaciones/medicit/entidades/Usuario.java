@@ -26,7 +26,17 @@ public class Usuario {
         this.seguro = seguro;
         this.contrasenia = contrasenia;
     }
-
+    public Usuario(Integer dni, String nombre, String apellidopaterno, String apellidomaterno, String sexo, Date fechadenacimiento, String correo, Integer celular, String seguro) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidopaterno = apellidopaterno;
+        this.apellidomaterno = apellidomaterno;
+        this.sexo = sexo;
+        this.fechadenacimiento = fechadenacimiento;
+        this.correo = correo;
+        this.celular = celular;
+        this.seguro = seguro;
+    }
     public Usuario() {
 
     }
