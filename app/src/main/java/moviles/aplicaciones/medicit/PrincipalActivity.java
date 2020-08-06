@@ -94,6 +94,13 @@ public class PrincipalActivity extends AppCompatActivity implements IComunicaFra
             fragmentTransaction.replace(R.id.container_fragment,new ConsultatuseguroFragment());
             fragmentTransaction.commit();
         }
+
+        if(item.getItemId() == R.id.cerrarsesion){
+            fragmentManager = getSupportFragmentManager();
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.container_fragment,new cerrarsesion());
+            fragmentTransaction.commit();
+        }
         return false;
     }
 
@@ -127,6 +134,14 @@ public class PrincipalActivity extends AppCompatActivity implements IComunicaFra
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container_fragment,new ConsultatuseguroFragment());
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void CerrarSesion(){
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.container_fragment,new cerrarsesion());
         fragmentTransaction.commit();
     }
 }

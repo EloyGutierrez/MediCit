@@ -6,4 +6,5 @@ public interface IComunicaFragments {
     public void MisCitas();
     public void ConsultaTuSeguro();
 
+    void CerrarSesion();
 }
