@@ -28,7 +28,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="59dp"
+        android:layout_marginBottom="42dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Contraseña"
@@ -47,7 +47,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="37dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Nombre de usuario"
@@ -64,10 +64,12 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="79dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginEnd="107dp"
         android:layout_marginBottom="44dp"
         app:layout_constraintBottom_toTopOf="@+id/edtusuario"
-        app:layout_constraintEnd_toEndOf="@+id/edtusuario"
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:layout_constraintStart_toStartOf="@+id/edtusuario"
         app:layout_constraintTop_toBottomOf="@+id/include6"
         app:srcCompat="@mipmap/logomedicit"
         tools:ignore="MissingConstraints" />
@@ -92,13 +94,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="22dp"
         android:onClick="Registrar"
-        android:text="¿No tienes cuenta?  Registrate"
+        android:text="Regístrate como paciente"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="100dp"
+        android:onClick="Registrarmedico"
+        android:text="Regístrate como médico"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
         tools:ignore="MissingConstraints" />
 
     <include
@@ -112,5 +128,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

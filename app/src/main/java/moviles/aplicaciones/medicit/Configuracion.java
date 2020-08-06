@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.widget.Toast;
 
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 import moviles.aplicaciones.medicit.utilidades.Utilidades;
@@ -40,6 +41,7 @@ public class Configuracion extends Fragment implements View.OnClickListener{
         btnactualizar = view.findViewById(R.id.btnactualizar);
 
         return view;
+
     }
 
 
@@ -59,6 +61,7 @@ public class Configuracion extends Fragment implements View.OnClickListener{
 
     private void actualizzarUsuario() {
         SQLiteDatabase db = conn.getWritableDatabase();
+        String [] parametros={edtdni.getText().toString()};
         ContentValues values = new ContentValues();
         values.put(Utilidades.CAMPO_NOMBRE, edtnombre.getText().toString());
         values.put(Utilidades.CAMPO_APELLIDOPATERNO, edtapellidopaterno.getText().toString());
@@ -66,7 +69,9 @@ public class Configuracion extends Fragment implements View.OnClickListener{
         values.put(Utilidades.CAMPO_CORREO, edtcorreo.getText().toString());
         values.put(Utilidades.CAMPO_CELULAR, edtcelular.getText().toString());
 
-        //db.update(Utilidades.TABLA_USUARIO,values,Utilidades.CAMPO_DNI+="")
+        db.update(Utilidades.TABLA_USUARIO,values,Utilidades.CAMPO_DNI+"=?",parametros);
+        Toast.makeText(getContext(),"el usuario se actualizo",Toast.LENGTH_LONG).show();
+        db.close();
 
 
 }
