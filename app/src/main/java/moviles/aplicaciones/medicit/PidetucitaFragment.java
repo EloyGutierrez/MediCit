@@ -1,51 +1,53 @@
 package moviles.aplicaciones.medicit;
-
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import moviles.aplicaciones.medicit.entidades.Usuario;
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
-import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
 public class PidetucitaFragment extends Fragment {
 
-    Spinner comboespecialidad, combousuario;
+    Spinner comboespecialidad;
+    TextView txtusuario,edtNombreUsuario;
     ConexionSQLiteHelper conn;
+    SharedPreferences sharedPreferences;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         LayoutInflater i = getLayoutInflater();
-        View view = i.inflate(R.layout.fragment_pidetucita, container, false);
+        View view= i.inflate(R.layout.fragment_pidetucita,container,false);
 
-        conn = new ConexionSQLiteHelper(getContext(), "db_medicos", null, 1);
+        conn = new ConexionSQLiteHelper(getContext(),"db_usuarios",null,1);
 
-
-        combousuario = view.findViewById(R.id.combousuario);
+        edtNombreUsuario = view.findViewById(R.id.edtNombreUsuario);
         comboespecialidad = view.findViewById(R.id.idspinnerespecialidad);
-
-
-        ArrayAdapter<CharSequence> especialidadadapter = ArrayAdapter.createFromResource(getContext(), R.array.combo_especialidad, R.layout.spinner_item_estilos);
+        txtusuario= view.findViewById(R.id.edtusuario);
+        ArrayAdapter<CharSequence> especialidadadapter= ArrayAdapter.createFromResource(getContext(),R.array.combo_especialidad,R.layout.spinner_item_estilos);
         comboespecialidad.setAdapter(especialidadadapter);
 
 
+        sharedPreferences=PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((getActivity().getApplicationContext())));
 
-
+        System.out.println("el sharedpreference llego : "+ sharedPreferences.getInt("USUARIO_DNI",0));
+        int f =sharedPreferences.getInt("USUARIO_DNI",0);
+        edtNombreUsuario.setText(f+"");
         return view;
     }
+
+
 
 }

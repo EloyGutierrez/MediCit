@@ -24,26 +24,13 @@
         android:id="@+id/idspinnerespecialidad"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginBottom="130dp"
         android:background="@drawable/estilos_cajas_de_texto"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/combousuario"
-        tools:ignore="MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/combousuario"
-        android:layout_width="280dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="58dp"
-        android:background="@drawable/estilos_cajas_de_texto"
-        app:layout_constraintBottom_toBottomOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.869"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/textView4"
         tools:ignore="MissingConstraints" />
 
@@ -67,12 +54,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="44dp"
         android:layout_marginBottom="52dp"
         android:text="Cita para"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toStartOf="@+id/combousuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         tools:ignore="MissingConstraints" />
@@ -104,4 +89,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtusuarionombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="169dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/textView27"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/idspinnerespecialidad" />
+
+    <TextView
+        android:id="@+id/edtNombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:text="Nombre completo del usuario"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/idspinnerespecialidad"
+        app:layout_constraintStart_toStartOf="@+id/idspinnerespecialidad" />
 </androidx.constraintlayout.widget.ConstraintLayout>

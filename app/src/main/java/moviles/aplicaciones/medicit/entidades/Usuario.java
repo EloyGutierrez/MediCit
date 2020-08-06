@@ -1,8 +1,9 @@
 package moviles.aplicaciones.medicit.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Usuario {
+public class Usuario  {
     private Integer dni;
     private String nombre;
     private String apellidopaterno;
