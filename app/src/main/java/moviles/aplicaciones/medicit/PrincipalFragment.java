@@ -3,14 +3,18 @@ package moviles.aplicaciones.medicit;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +30,6 @@ public class PrincipalFragment extends Fragment {
     IComunicaFragments interfaceComunicaFragments;
 
     ConexionSQLiteHelper conn;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,7 +45,6 @@ public class PrincipalFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 interfaceComunicaFragments.PideTuCita();
-
             }
 
         });

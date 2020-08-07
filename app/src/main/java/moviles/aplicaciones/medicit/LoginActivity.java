@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
+import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtusuario, edtcontraseña;
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         edtcontraseña=findViewById(R.id.edtcontraseña);
 
 
+
     }
 
 public void Principal(View view){
@@ -46,20 +48,25 @@ public void Principal(View view){
     SQLiteDatabase db=conn.getWritableDatabase();
     int USUARIO_DNI = Integer.parseInt(edtusuario.getText().toString());
     String USUARIO_CONTRASENIA = edtcontraseña.getText().toString();
-    fila = db.rawQuery( "SELECT dni,contrasenia FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
-    sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
-    Gdni=sharedPreferences.edit();
-    System.out.println("el USUARIO_DNI es : " + USUARIO_DNI);
-    try {
-        Gdni.putInt("USUARIO_DNI",USUARIO_DNI);
-        Gdni.apply();
-        System.out.println("el Gdni es : " + Gdni.putInt("USUARIO_DNI",USUARIO_DNI));
-    }catch (Exception e){
-        e.printStackTrace();
-    }
+    fila = db.rawQuery( "SELECT dni,contrasenia,nombre,apellidopaterno,apellidomaterno FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
+
     if(fila.moveToFirst()){
         int usuario=Integer.parseInt(fila.getString(0));
+        System.out.println("usuario : "+usuario);
         String password=fila.getString(1);
+        System.out.println("password : "+password);
+        String nombre=fila.getString(2);
+        System.out.println("nombre : "+nombre);
+        String apellidopaterno=fila.getString(3);
+        System.out.println("apellido paterno : "+apellidopaterno);
+        String apellidomaterno=fila.getString(4);
+        System.out.println("apellido materno : "+apellidomaterno);
+        sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
+        Gdni=sharedPreferences.edit();
+        Gdni.putString("USUARIO_NOMBRE",nombre);
+        Gdni.putString("USUARIO_APATERNO",apellidopaterno);
+        Gdni.putString("USUARIO_AMATERNO",apellidomaterno);
+        Gdni.apply();
 
         if(USUARIO_DNI==usuario&&USUARIO_CONTRASENIA.equals(password)){
 
@@ -75,14 +82,11 @@ public void Principal(View view){
 
     }
 
+       
+
 
 
 }
-    public void guardarPreferencias(){
-
-    }
-
-
 
 
     public void Olvidemicontraseña(View view){
