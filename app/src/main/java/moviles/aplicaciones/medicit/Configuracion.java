@@ -52,15 +52,7 @@ public class Configuracion extends Fragment implements View.OnClickListener{
 
     }
 
-    public void onclick(){
-        cargarImagen();
-    }
 
-    private void cargarImagen() {
-        Intent i=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        i.setType("image/");
-        startActivityForResult(i.createChooser(i,"Seleccione la aplicación"),10);
-    }
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -78,12 +70,20 @@ public class Configuracion extends Fragment implements View.OnClickListener{
             case R.id.btnactualizar: actualizzarUsuario();
                 break;
             case R.id.btnatras:
-
                 break;
+            case R.id.cargarimagen: cambiarImagen();
         }
+
+
+
 
     }
 
+    private void cambiarImagen() {
+        Intent i=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        i.setType("image/");
+        startActivityForResult(i.createChooser(i,"Seleccione la aplicación"),10);
+    }
 
 
     private void actualizzarUsuario() {
