@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -49,14 +50,24 @@ public class PidetucitaFragment extends Fragment {
         ArrayAdapter<CharSequence> especialidadadapter= ArrayAdapter.createFromResource(getContext(),R.array.combo_especialidad,R.layout.spinner_item_estilos);
         comboespecialidad.setAdapter(especialidadadapter);
 
-        //capturar los datos del spinner
-        String especialidad = comboespecialidad.getSelectedItem().toString();
-        System.out.println("ESPECIALIDAD: " +especialidad);
-        //compartiendo dato especialidad
-        sharedPreferences=PreferenceManager.getDefaultSharedPreferences(getContext());
-        Gespecialidad=sharedPreferences.edit();
-        Gespecialidad.putString("PTC_ESPECIALIDAD",especialidad);
-        Gespecialidad.apply();
+        comboespecialidad.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String especialidad =parent.getItemAtPosition(position).toString();
+                System.out.println("LA ESPECIALIDAD SELECCIONADA EN PIDETUCITAFRAGMENT : "+especialidad);
+                sharedPreferences=PreferenceManager.getDefaultSharedPreferences(getContext());
+                Gespecialidad=sharedPreferences.edit();
+                Gespecialidad.putString("PTC_ESPECIALIDAD",especialidad);
+                Gespecialidad.apply();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
 
 
 
