@@ -99,4 +99,11 @@ public void Principal(View view){
         Intent i =new Intent(this, RegistrarActivity.class);
         startActivity(i);
     }
+
+    public void Registrarmedico(View view){
+        Intent i =new Intent(this, RegistrarMedio.class);
+        startActivity(i);
+    }
+
+
 }

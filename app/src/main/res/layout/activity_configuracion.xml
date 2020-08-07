@@ -1,65 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="167dp"
-        android:layout_height="226dp"
-        app:srcCompat="@drawable/logomedicit"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="-35dp" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="127dp"
-        android:layout_height="97dp"
+        android:id="@+id/imagenid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="510dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toTopOf="@+id/btnatras"
+        app:layout_constraintEnd_toStartOf="@+id/cargarimagen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_perm_identity_24"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="192dp" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="143dp"
-        android:layout_height="29dp"
-        android:text="Foto de perfil"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="312dp" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="230dp"
-        android:layout_height="44dp"
-        android:background="@drawable/estilos_cajas_de_texto"
-        android:hint="Nombres"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="356dp" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="230dp"
-        android:layout_height="42dp"
-        android:background="@drawable/estilos_cajas_de_texto"
-        android:hint="Apellidos"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="413dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/edtdni"
         android:layout_width="230dp"
-        android:layout_height="44dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:ems="10"
+        android:hint="DNI"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/edtnombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cargarimagen"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtnombre"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:ems="10"
+        android:hint="Nombres"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/edtapellidopaterno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtdni"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtapellidopaterno"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:ems="10"
+        android:hint="Apellido paterno"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/edtapellidomaterno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtnombre"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtapellidomaterno"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:ems="10"
+        android:hint="Apellido materno"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/edtcorreo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtapellidopaterno"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/edtcorreo"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Email"
@@ -67,13 +96,17 @@
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="472dp" />
+        app:layout_constraintBottom_toTopOf="@+id/edtcelular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtapellidomaterno"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextNumber7"
+        android:id="@+id/edtcelular"
         android:layout_width="230dp"
-        android:layout_height="44dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:ems="10"
         android:hint="Telefono"
@@ -81,18 +114,60 @@
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="528dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnactualizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtcorreo"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button7"
-        android:layout_width="118dp"
-        android:layout_height="41dp"
+        android:id="@+id/btnactualizar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/estilos_cajas_de_texto"
-        android:text="Aceptar"
+        android:text="Actualizar"
         android:textColor="@color/colorPrimary"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="597dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnatras"
+        app:layout_constraintTop_toBottomOf="@+id/edtcelular"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnatras"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/estilos_cajas_de_texto"
+        android:text="ATRAS"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnactualizar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenid"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cargarimagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="101dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="12dp"
+        android:clickable="true"
+        android:onClick="onclick"
+        app:layout_constraintBottom_toTopOf="@+id/edtdni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagenid"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
