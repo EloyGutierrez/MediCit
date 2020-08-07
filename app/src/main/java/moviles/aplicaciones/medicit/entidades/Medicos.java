@@ -2,7 +2,7 @@ package moviles.aplicaciones.medicit.entidades;
 
 import java.util.Date;
 
-public class medicos {
+public class Medicos {
     private int id;
     private String nombre;
     private String apellidopaterno;
@@ -15,7 +15,7 @@ public class medicos {
     private String direccion;
     private String celular;
 
-    public medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String dni, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
+    public Medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String dni, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
         this.id = id;
         this.nombre = nombre;
         this.apellidopaterno = apellidopaterno;

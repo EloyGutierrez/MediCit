@@ -2,24 +2,26 @@ package moviles.aplicaciones.medicit.entidades;
 
 import java.util.Date;
 
-public class cita {
+public class Cita {
 
     private int id;
-    private  int dni;
-    private String nombre;
-    private String especialidad;
-    private String epecialidad;
-    private Date fecha;
     private String medico;
+    private  int dni;
+    private String precio;
+    private String especialidad;
+    private Date fecha;
 
-    public cita(int id, int dni, String nombre, String especialidad, String epecialidad, Date fecha, String medico) {
+
+    public Cita() {
+    }
+
+    public Cita(int id, String medico, int dni, String precio, String especialidad, Date fecha) {
         this.id = id;
-        this.dni = dni;
-        this.nombre = nombre;
-        this.especialidad = especialidad;
-        this.epecialidad = epecialidad;
-        this.fecha = fecha;
         this.medico = medico;
+        this.dni = dni;
+        this.precio = precio;
+        this.especialidad = especialidad;
+        this.fecha = fecha;
     }
 
     public int getId() {
@@ -30,6 +32,14 @@ public class cita {
         this.id = id;
     }
 
+    public String getMedico() {
+        return medico;
+    }
+
+    public void setMedico(String medico) {
+        this.medico = medico;
+    }
+
     public int getDni() {
         return dni;
     }
@@ -38,12 +48,12 @@ public class cita {
         this.dni = dni;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getPrecio() {
+        return precio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
     public String getEspecialidad() {
@@ -54,27 +64,11 @@ public class cita {
         this.especialidad = especialidad;
     }
 
-    public String getEpecialidad() {
-        return epecialidad;
-    }
-
-    public void setEpecialidad(String epecialidad) {
-        this.epecialidad = epecialidad;
-    }
-
     public Date getFecha() {
         return fecha;
     }
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public String getMedico() {
-        return medico;
-    }
-
-    public void setMedico(String medico) {
-        this.medico = medico;
     }
 }

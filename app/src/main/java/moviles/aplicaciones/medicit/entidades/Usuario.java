@@ -1,8 +1,9 @@
 package moviles.aplicaciones.medicit.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Usuario {
+public class Usuario  {
     private Integer dni;
     private String nombre;
     private String apellidopaterno;
@@ -25,6 +26,20 @@ public class Usuario {
         this.celular = celular;
         this.seguro = seguro;
         this.contrasenia = contrasenia;
+    }
+    public Usuario(Integer dni, String nombre, String apellidopaterno, String apellidomaterno, String sexo, Date fechadenacimiento, String correo, Integer celular, String seguro) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidopaterno = apellidopaterno;
+        this.apellidomaterno = apellidomaterno;
+        this.sexo = sexo;
+        this.fechadenacimiento = fechadenacimiento;
+        this.correo = correo;
+        this.celular = celular;
+        this.seguro = seguro;
+    }
+    public Usuario() {
+
     }
 
     public Integer getDni() {

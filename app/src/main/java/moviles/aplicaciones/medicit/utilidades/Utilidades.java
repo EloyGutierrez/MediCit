@@ -36,16 +36,16 @@ public class Utilidades {
 
     public final static String TABLA_CITA = "citas";
     public final static String CITA_ID = "id";
+    public final static String CITA_MEDICO = "medico";
     public final static String CITA_DNI = "dni";
-    public final static String CITA_NOMBRE= "nombre";
+    public final static String CITA_PRECIO= "precio";
     public final static String CITA_ESPECIALIDAD = "especialidad";
     public final static String CITA_FECHA = "fecha";
-    public final static String CITA_MEDICO = "medico";
 
 
 
     public static final String CREAR_TABLA_USUARIO = "CREATE TABLE "+TABLA_USUARIO+"("+CAMPO_DNI+" INTEGER NOT NULL PRIMARY KEY, "+CAMPO_NOMBRE+" TEXT, "+CAMPO_APELLIDOPATERNO+" TEXT, "+CAMPO_APELLIDOMATERNO+" TEXT, "+CAMPO_SEXO+" TEXT, "+CAMPO_FECHADENACIMIENTO+" DATE, "+CAMPO_CORREO+" TEXT, "+CAMPO_CELULAR+" INTEGER, "+CAMPO_SEGURO+" TEXT, "+CAMPO_CONTRASENIA+" TEXT)";
     public static final String CREAR_TABLA_MEDICO = "CREATE TABLE "+TABLA_MEDICO+"("+MEDICO_ID+" INTEGER PRIMARY KEY , "+MEDICO_NOMBRE+" TEXT, "+MEDICO_APELLIDOPATERNO+" TEXT, "+MEDICO_APELLIDOMATERNO+" TEXT, "+MEDICO_ESPECIALIDAD+" TEXT, "+MEDICO_SEXO+" TEXT, "+MEDICO_FECHADENACIMIENTO+" DATE, "+MEDICO_CORREO+" TEXT, "+MEDICO_DIRECCION+" TEXT, "+MEDICO_CELULAR+" INTEGER)";
-    public static final String CREAR_TABLA_CITA = "CREATE TABLE "+TABLA_CITA+"("+CITA_ID+" INTEGER NOT NULL PRIMARY KEY, "+CITA_DNI+" INTEGER, "+CITA_NOMBRE+" TEXT, "+CITA_ESPECIALIDAD+" TEXT, "+CITA_FECHA+" DATE, "+CITA_MEDICO+" TEXT)";
+    public static final String CREAR_TABLA_CITA = "CREATE TABLE "+TABLA_CITA+"("+CITA_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+CITA_DNI+" INTEGER, "+CITA_PRECIO+" TEXT, "+CITA_ESPECIALIDAD+" TEXT, "+CITA_FECHA+" DATE, "+CITA_MEDICO+" TEXT)";
 
 }
