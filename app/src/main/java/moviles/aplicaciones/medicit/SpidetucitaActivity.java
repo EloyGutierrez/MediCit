@@ -51,6 +51,8 @@ public class SpidetucitaActivity extends AppCompatActivity {
                         //recibiendo los datos de sharedpreference
                         sharedPreferences= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((SpidetucitaActivity.this.getApplicationContext())));
                         String dni=sharedPreferences.getString("USUARIO_DNI","dni defecto");
+                        
+                        //recibiendo los datos de la especialidad
                         String especialidad=sharedPreferences.getString("PTC_ESPECIALIDAD","especialidad defecto");
                         System.out.println("la especialidad Spidetucita : "+especialidad);
                         System.out.println("dni SpidetucitaActivity : " +dni);
