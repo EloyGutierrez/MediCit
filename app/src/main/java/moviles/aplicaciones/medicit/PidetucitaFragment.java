@@ -48,6 +48,8 @@ public class PidetucitaFragment extends Fragment {
 
         ArrayAdapter<CharSequence> especialidadadapter= ArrayAdapter.createFromResource(getContext(),R.array.combo_especialidad,R.layout.spinner_item_estilos);
         comboespecialidad.setAdapter(especialidadadapter);
+
+        //capturar los datos del spinner
         String especialidad = comboespecialidad.getSelectedItem().toString();
         System.out.println("ESPECIALIDAD: " +especialidad);
         //compartiendo dato especialidad
