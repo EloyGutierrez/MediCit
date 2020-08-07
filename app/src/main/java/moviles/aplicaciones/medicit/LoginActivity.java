@@ -54,6 +54,7 @@ public void Principal(View view){
         int usuario=Integer.parseInt(fila.getString(0));
         System.out.println("usuario : "+usuario);
         String password=fila.getString(1);
+        String DNIUSUARIO =Integer.toString(usuario);
         System.out.println("password : "+password);
         String nombre=fila.getString(2);
         System.out.println("nombre : "+nombre);
@@ -63,6 +64,7 @@ public void Principal(View view){
         System.out.println("apellido materno : "+apellidomaterno);
         sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
         Gdni=sharedPreferences.edit();
+        Gdni.putString("USUARIO_DNI",DNIUSUARIO);
         Gdni.putString("USUARIO_NOMBRE",nombre);
         Gdni.putString("USUARIO_APATERNO",apellidopaterno);
         Gdni.putString("USUARIO_AMATERNO",apellidomaterno);

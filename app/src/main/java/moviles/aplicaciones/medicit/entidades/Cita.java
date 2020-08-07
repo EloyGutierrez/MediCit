@@ -5,26 +5,24 @@ import java.util.Date;
 public class Cita {
 
     private int id;
+    private String medico;
     private  int dni;
-    private String nombre;
+    private String precio;
     private String especialidad;
     private Date fecha;
-    private String medico;
 
 
     public Cita() {
     }
 
-    public Cita(int id, int dni, String nombre, String especialidad, Date fecha, String medico) {
+    public Cita(int id, String medico, int dni, String precio, String especialidad, Date fecha) {
         this.id = id;
+        this.medico = medico;
         this.dni = dni;
-        this.nombre = nombre;
+        this.precio = precio;
         this.especialidad = especialidad;
         this.fecha = fecha;
-        this.medico = medico;
     }
-
-
 
     public int getId() {
         return id;
@@ -32,6 +30,14 @@ public class Cita {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getMedico() {
+        return medico;
+    }
+
+    public void setMedico(String medico) {
+        this.medico = medico;
     }
 
     public int getDni() {
@@ -42,12 +48,12 @@ public class Cita {
         this.dni = dni;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getPrecio() {
+        return precio;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
     public String getEspecialidad() {
@@ -64,13 +70,5 @@ public class Cita {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-
-    public String getMedico() {
-        return medico;
-    }
-
-    public void setMedico(String medico) {
-        this.medico = medico;
     }
 }

@@ -29,6 +29,7 @@ public class PidetucitaFragment extends Fragment {
     TextView txtusuario,edtNombreUsuario;
     ConexionSQLiteHelper conn;
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor Gespecialidad;
     Button btnsiguinte;
 
 
@@ -47,29 +48,35 @@ public class PidetucitaFragment extends Fragment {
 
         ArrayAdapter<CharSequence> especialidadadapter= ArrayAdapter.createFromResource(getContext(),R.array.combo_especialidad,R.layout.spinner_item_estilos);
         comboespecialidad.setAdapter(especialidadadapter);
+        String especialidad = comboespecialidad.getSelectedItem().toString();
+        System.out.println("ESPECIALIDAD: " +especialidad);
+        //compartiendo dato especialidad
+        sharedPreferences=PreferenceManager.getDefaultSharedPreferences(getContext());
+        Gespecialidad=sharedPreferences.edit();
+        Gespecialidad.putString("PTC_ESPECIALIDAD",especialidad);
+        Gespecialidad.apply();
 
 
 
         //obteniendo el dni que lledo del sharedpreference
         sharedPreferences=PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((getActivity().getApplicationContext())));
-
-        System.out.println("el sharedpreference nombre : "+ sharedPreferences.getString("USUARIO_NOMBRE","nombre defecto"));
-        System.out.println("el sharedpreference apellidopaterno : "+ sharedPreferences.getString("USUARIO_APATERNO","apaterno defecto"));
-        System.out.println("el sharedpreference apellidomaterno : "+ sharedPreferences.getString("USUARIO_AMATERNO","amaterno defecto"));
+        String dni=sharedPreferences.getString("USUARIO_DNI","dni defecto");
         String nombre=sharedPreferences.getString("USUARIO_NOMBRE","nombre defecto");
         String apellidopaterno=sharedPreferences.getString("USUARIO_APATERNO","nombre defecto");
         String apellidomaterno=sharedPreferences.getString("USUARIO_AMATERNO","nombre defecto");
+        System.out.println("dni pidetucitafragment : " +dni);
         edtNombreUsuario.setText(nombre+" "+apellidopaterno+" "+apellidomaterno);
 
+        btnsiguinte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getContext(), SpidetucitaActivity.class);
+                startActivity(i);
+            }
+        });
 
         return view;
     }
-    public void SiguientePidetucita(View view){
-
-    }
-
-
-
 
 
 }
