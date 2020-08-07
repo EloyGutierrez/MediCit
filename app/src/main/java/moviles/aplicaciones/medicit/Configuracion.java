@@ -1,7 +1,10 @@
 package moviles.aplicaciones.medicit;
 
+import android.annotation.SuppressLint;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +17,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
+import static androidx.core.provider.FontsContractCompat.FontRequestCallback.RESULT_OK;
+
 public class Configuracion extends Fragment implements View.OnClickListener{
     EditText edtdni, edtnombre, edtapellidopaterno, edtapellidomaterno, edtcorreo, edtcelular;
     Button btnactualizar;
     Intent x;
+    ImageView imagen;
 
      ConexionSQLiteHelper conn;
     private LayoutInflater inflater;
@@ -39,11 +46,31 @@ public class Configuracion extends Fragment implements View.OnClickListener{
         edtcorreo = view.findViewById(R.id.edtcorreo);
         edtcelular = view.findViewById(R.id.edtcelular);
         btnactualizar = view.findViewById(R.id.btnactualizar);
+        imagen=view.findViewById(R.id.imagenid);
 
         return view;
 
     }
 
+    public void onclick(){
+        cargarImagen();
+    }
+
+    private void cargarImagen() {
+        Intent i=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        i.setType("image/");
+        startActivityForResult(i.createChooser(i,"Seleccione la aplicación"),10);
+    }
+
+    @SuppressLint("RestrictedApi")
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+            Uri path = data.getData();
+            imagen.setImageURI(path);
+        }
+    }
 
     @Override
     public void onClick(View v) {
