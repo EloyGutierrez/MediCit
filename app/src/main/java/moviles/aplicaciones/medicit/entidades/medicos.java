@@ -7,6 +7,7 @@ public class medicos {
     private String nombre;
     private String apellidopaterno;
     private String apellidomaterno;
+    private String dni;
     private String especialidad;
     private String sexo;
     private Date fechadenacimiento;
@@ -14,11 +15,12 @@ public class medicos {
     private String direccion;
     private String celular;
 
-    public medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
+    public medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String dni, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
         this.id = id;
         this.nombre = nombre;
         this.apellidopaterno = apellidopaterno;
         this.apellidomaterno = apellidomaterno;
+        this.dni = dni;
         this.especialidad = especialidad;
         this.sexo = sexo;
         this.fechadenacimiento = fechadenacimiento;
@@ -57,6 +59,14 @@ public class medicos {
 
     public void setApellidomaterno(String apellidomaterno) {
         this.apellidomaterno = apellidomaterno;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getEspecialidad() {
