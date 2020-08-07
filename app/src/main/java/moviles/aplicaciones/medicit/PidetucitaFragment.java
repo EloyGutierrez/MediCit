@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ public class PidetucitaFragment extends Fragment {
     TextView txtusuario,edtNombreUsuario;
     ConexionSQLiteHelper conn;
     SharedPreferences sharedPreferences;
-    private Cursor fila;
+    Button btnsiguinte;
 
 
     @Nullable
@@ -42,6 +43,7 @@ public class PidetucitaFragment extends Fragment {
         edtNombreUsuario = view.findViewById(R.id.edtNombreUsuario);
         comboespecialidad = view.findViewById(R.id.idspinnerespecialidad);
         txtusuario= view.findViewById(R.id.edtusuario);
+        btnsiguinte = view.findViewById(R.id.btnSiguientePidetucita);
 
         ArrayAdapter<CharSequence> especialidadadapter= ArrayAdapter.createFromResource(getContext(),R.array.combo_especialidad,R.layout.spinner_item_estilos);
         comboespecialidad.setAdapter(especialidadadapter);
@@ -58,13 +60,16 @@ public class PidetucitaFragment extends Fragment {
         String apellidopaterno=sharedPreferences.getString("USUARIO_APATERNO","nombre defecto");
         String apellidomaterno=sharedPreferences.getString("USUARIO_AMATERNO","nombre defecto");
         edtNombreUsuario.setText(nombre+" "+apellidopaterno+" "+apellidomaterno);
+
+
         return view;
     }
-
-    private void consultar() {
-
+    public void SiguientePidetucita(View view){
 
     }
+
+
+
 
 
 }

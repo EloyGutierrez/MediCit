@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSiguientePidetucita"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginBottom="78dp"
@@ -28,7 +28,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="130dp"
         android:background="@drawable/estilos_cajas_de_texto"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSiguientePidetucita"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toTopOf="@+id/textView4"
@@ -43,7 +43,7 @@
         android:layout_marginBottom="100dp"
         android:text="Especialidad"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnSiguientePidetucita"
         app:layout_constraintEnd_toStartOf="@+id/idspinnerespecialidad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
@@ -87,7 +87,7 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/btnSiguientePidetucita"
         tools:ignore="MissingConstraints" />
 
     <TextView

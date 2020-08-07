@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".RegistrarActivity"></activity>
+        <activity android:name=".SpidetucitaActivity"></activity>
+        <activity android:name=".RegistrarActivity" />
         <activity
             android:name=".PrincipalActivity"
             android:theme="@style/AppTheme.NoActionBar" />
