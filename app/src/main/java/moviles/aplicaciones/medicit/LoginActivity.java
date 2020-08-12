@@ -115,10 +115,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    public void Registrarmedico(View view){
-        Intent i =new Intent(this, RegistrarMedico.class);
-        startActivity(i);
-    }
-
-
 }
