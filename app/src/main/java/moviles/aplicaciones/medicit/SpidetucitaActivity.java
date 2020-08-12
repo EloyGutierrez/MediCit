@@ -34,12 +34,10 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
     SharedPreferences sharedPreferences;
     ListView listmed;
     ListAdapter myAdapter;
-    ConexionSQLiteHelper con;
-    private List<Medicos> myList = new ArrayList<>();
-    ArrayList<Medicos> especialidadLista;
+    List<Medicos> myList = new ArrayList<>();
 
 
-    ArrayList<String> listaInformacion;
+
     ArrayList<Medicos> listaMedicos;
 
     @Override
@@ -60,9 +58,9 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
         btnfecha.setText("Hoy : "+fechahoy);
 
 
-        listarmedicos();
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
-        listmed.setAdapter(adapter);
+        listarmedicos();;
+        myAdapter=new ListAdapter(SpidetucitaActivity.this, R.layout.item_row,myList);
+        listmed.setAdapter(myAdapter);
 
 
 
@@ -158,9 +156,13 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
     }
 
     private void obtenerlista() {
-        listaInformacion=new ArrayList<String>();
         for (int i=0; i<listaMedicos.size();i++){
-            listaInformacion.add(listaMedicos.get(i).getNombre()+"-"+listaMedicos.get(i).getApellidopaterno()+"-"+listaMedicos.get(i).getApellidomaterno()+"-"+listaMedicos.get(i).getEspecialidad()+"-"+listaMedicos.get(i).getCelular());
+            String nombre =listaMedicos.get(i).getNombre();
+            String apellidopaterno =listaMedicos.get(i).getApellidopaterno();
+            String apellidomaterno =listaMedicos.get(i).getApellidomaterno();
+            String especialidad =listaMedicos.get(i).getEspecialidad();
+            String celular =listaMedicos.get(i).getCelular();
+            myList.add(new Medicos(nombre,apellidopaterno,apellidomaterno,especialidad,celular));
 
         }
     }
