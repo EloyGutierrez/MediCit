@@ -16,14 +16,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="120dp"
+        android:layout_marginLeft="110dp"
         android:text="TextView" />
     <TextView
         android:id="@+id/EDTAPELLIDOMATERNO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="190dp"
+        android:layout_marginLeft="170dp"
         android:text="TextView" />
     <TextView
         android:id="@+id/EDTESPECIALIDAD"
@@ -33,20 +33,24 @@
         android:layout_marginLeft="50dp"
         android:text="TextView" />
 
-    <Button
-        android:id="@+id/BTNLLAMARMEDICO"
-        android:layout_width="320dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="100dp"
+    <TextView
+        android:id="@+id/EDTCELULAR"
+        android:layout_width="246dp"
+        android:layout_height="37dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="120dp"
+        android:justificationMode="inter_word"
+        android:shadowRadius="2"
+        android:textAlignment="center"
         android:background="@color/colorPrimary"
         android:drawableLeft="@android:drawable/stat_sys_phone_call"
-        android:text="Requiere coordinación telefónica"
+        android:text="Requiere coordinacion telefónica  "
         android:textColor="@color/colorblanco" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:textColor="@color/colorblanco"
+        android:layout_marginTop="160dp"
         android:layout_marginLeft="50dp" />
+
+
 </RelativeLayout>

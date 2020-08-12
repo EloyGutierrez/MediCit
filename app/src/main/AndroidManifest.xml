@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ListarMedicosActivity"></activity>
+        <activity android:name=".CitaActivity"></activity>
+        <activity android:name=".ListarMedicosActivity" />
         <activity android:name=".AdministradorActivity" />
         <activity android:name=".RegistrarMedico" />
         <activity android:name=".SpidetucitaActivity" />

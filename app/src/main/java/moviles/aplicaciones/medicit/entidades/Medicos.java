@@ -31,7 +31,8 @@ public class Medicos {
         this.celular = celular;
     }
 
-    public Medicos(String nombre, String apellidopaterno, String apellidomaterno, String especialidad, String celular) {
+    public Medicos(String id, String nombre, String apellidopaterno, String apellidomaterno, String especialidad, String celular) {
+        this.id = id;
         this.nombre = nombre;
         this.apellidopaterno = apellidopaterno;
         this.apellidomaterno = apellidomaterno;

@@ -30,6 +30,7 @@ public class ListAdapter extends ArrayAdapter<Medicos> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
        View view= convertView;
+
        if (view==null)
            view= LayoutInflater.from(myContext).inflate(resourceLayout,null);
 
@@ -45,8 +46,8 @@ public class ListAdapter extends ArrayAdapter<Medicos> {
         especialidad.setText(medicos.getEspecialidad());
 
 
-
-
        return view;
     }
+
+
 }

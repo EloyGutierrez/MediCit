@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CitaActivity">
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha cita"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtFechacita"
+        app:layout_constraintStart_toStartOf="@+id/textView41" />
+
+    <TextView
+        android:id="@+id/edtUsuarioseguro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:text="usuario seguro"
+        app:layout_constraintStart_toEndOf="@+id/textView42"
+        app:layout_constraintTop_toTopOf="@+id/textView41" />
+
+    <TextView
+        android:id="@+id/edtFechacita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="fecha"
+        app:layout_constraintStart_toStartOf="@+id/edtUsuarioseguro"
+        app:layout_constraintTop_toBottomOf="@+id/edtUsuarioseguro" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Usuario"
+        app:layout_constraintStart_toStartOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medico"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtEspecialidaddelmedico"
+        app:layout_constraintStart_toStartOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/edtUsuarioDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="usuario dni"
+        app:layout_constraintBottom_toTopOf="@+id/edtUsuarioseguro"
+        app:layout_constraintStart_toStartOf="@+id/edtUsuarioseguro" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:text="Cita Medica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:text="Medico"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtNombredelmedico"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/edtNombredelmedico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:text="Nombre del medico"
+        app:layout_constraintBottom_toTopOf="@+id/edtEspecialidaddelmedico"
+        app:layout_constraintStart_toStartOf="@+id/edtEspecialidaddelmedico" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="317dp"
+        android:text="Usuario"
+        app:layout_constraintStart_toStartOf="@+id/textView38"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/edtEspecialidaddelmedico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginBottom="44dp"
+        android:text="Especialidad del medico"
+        app:layout_constraintBottom_toTopOf="@+id/edtUsuarioDNI"
+        app:layout_constraintStart_toEndOf="@+id/textView38" />
+</androidx.constraintlayout.widget.ConstraintLayout>
