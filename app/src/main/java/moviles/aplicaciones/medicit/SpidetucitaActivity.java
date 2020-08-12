@@ -10,6 +10,7 @@ import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -32,6 +33,9 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
     private ListView listamedicos;
     ListAdapter myAdapter;
     private List<Medicos> myList = new ArrayList<>();
+    Cursor filamedicos;
+    ArrayList<String> listaInformacion;
+    ArrayList<Medicos> listaMedicos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +75,6 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
         //crear cita
         String fechacrearcita = btnfecha.getText().toString();
         System.out.println("la fecha es: "+fechacrearcita);
-        listamedicos.setOnItemClickListener(this);
-        myList.add(new Medicos(001,"Gaston","Meneces","Sicha","54545454","Odontologia","Masculino",null,"gastonMsicha@gmail.com","av los laureles","987654321"));
-        myList.add(new Medicos(002,"Luz maria","Garcia","Medrano","54545454","Odontologia","Femenino",null,"gastonMsicha@gmail.com","av los laureles","987654321"));
-        myList.add(new Medicos(003,"Rafael","Rodriguez","Soto","54545454","Odontologia","Masculino",null,"gastonMsicha@gmail.com","av los laureles","987654321"));
-        myList.add(new Medicos(004,"Raul","Diaz","Smith","54545454","Odontologia","Masculino",null,"gastonMsicha@gmail.com","av los laureles","987654321"));
-
         myAdapter=new ListAdapter(this, R.layout.item_row,myList);
         listamedicos.setAdapter(myAdapter);
 
@@ -118,4 +116,37 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
     }
+
+    public void listarmedicos() {
+        ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_medicos", null, 1);
+        SQLiteDatabase db = conn.getWritableDatabase();
+        Medicos medico =null;
+        listaMedicos =new ArrayList<Medicos>();
+
+        //recibiendo los datos de la especialidad
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((SpidetucitaActivity.this.getApplicationContext())));
+        String ESPECIALIDAD = sharedPreferences.getString("PTC_ESPECIALIDAD", "especialidad defecto");
+
+        filamedicos = db.rawQuery( "SELECT nombre,apellidopaterno,apellidomaterno,especialidad,celular FROM medicos WHERE especialidad='"+ESPECIALIDAD+"'",null);
+        while (filamedicos.moveToNext()){
+            medico = new Medicos();
+            medico.setNombre(filamedicos.getString(0));
+            medico.setApellidopaterno(filamedicos.getString(1));
+            medico.setApellidomaterno(filamedicos.getString(2));
+            medico.setEspecialidad(filamedicos.getString(3));
+            medico.setCelular(filamedicos.getString(4));
+            myList.add(medico);
+        }
+        obtenerlista();
+        System.out.println("se ejecuto listarmedico();");
+    }
+
+    private void obtenerlista() {
+        listaInformacion=new ArrayList<String>();
+        for (int i=0; i<myList.size();i++){
+            listaInformacion.add(myList.get(i).getNombre()+"-"+myList.get(i).getApellidopaterno()+"-"+myList.get(i).getApellidomaterno()+"-"+myList.get(i).getEspecialidad()+"-"+myList.get(i).getCelular());
+
+        }
+    }
+
 }

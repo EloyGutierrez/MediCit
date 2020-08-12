@@ -37,6 +37,20 @@
                 android:textColor="@color/colorPrimary"
                 tools:layout_editor_absoluteX="128dp"
                 tools:layout_editor_absoluteY="129dp" />
+            <EditText
+                android:id="@+id/edtdni"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/estilos_cajas_de_texto"
+                android:ems="10"
+                android:hint="Nro. de documento"
+                android:inputType="number"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                tools:layout_editor_absoluteX="102dp"
+                tools:layout_editor_absoluteY="643dp" />
 
 
             <EditText
@@ -80,20 +94,7 @@
                 android:textColorHint="@color/colorPrimary" />
 
 
-            <EditText
-                android:id="@+id/edtdni"
-                android:layout_width="310dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="28dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                android:ems="10"
-                android:hint="Nro. de documento"
-                android:inputType="number"
-                android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary"
-                tools:layout_editor_absoluteX="102dp"
-                tools:layout_editor_absoluteY="643dp" />
+
 
             <Spinner
                 android:id="@+id/idspinnerespecialidad"
@@ -168,6 +169,20 @@
                 android:textColorHint="@color/colorPrimary"
                 tools:layout_editor_absoluteX="13dp"
                 tools:layout_editor_absoluteY="654dp" />
+            <EditText
+                android:id="@+id/edtdireccion"
+                android:layout_width="310dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/estilos_cajas_de_texto"
+                android:ems="10"
+                android:hint="Direccion"
+                android:inputType="textPersonName"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorPrimary"
+                tools:layout_editor_absoluteX="13dp"
+                tools:layout_editor_absoluteY="654dp" />
 
             <EditText
                 android:id="@+id/edtcelular"
@@ -184,32 +199,6 @@
                 tools:layout_editor_absoluteX="115dp"
                 tools:layout_editor_absoluteY="694dp" />
 
-
-            <EditText
-                android:id="@+id/edtcontrasenia"
-                android:layout_width="310dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                android:ems="10"
-                android:hint="Contraseña"
-                android:inputType="textPassword"
-                android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary" />
-
-            <EditText
-                android:id="@+id/edtcontraseniaa"
-                android:layout_width="310dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/estilos_cajas_de_texto"
-                android:ems="10"
-                android:hint="Confirmar Contraseña"
-                android:inputType="textPassword"
-                android:textColor="@color/colorPrimary"
-                android:textColorHint="@color/colorPrimary" />
 
 
             <Button

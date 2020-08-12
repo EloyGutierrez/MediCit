@@ -100,10 +100,6 @@ public void Principal(View view){
         startActivity(i);
     }
 
-    public void Registrarmedico(View view){
-        Intent i =new Intent(this, RegistrarMedio.class);
-        startActivity(i);
-    }
 
 
 }

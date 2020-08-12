@@ -15,6 +15,10 @@ public class Medicos {
     private String direccion;
     private String celular;
 
+    public Medicos(){
+        
+    }
+
     public Medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String dni, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
         this.id = id;
         this.nombre = nombre;
