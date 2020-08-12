@@ -36,60 +36,57 @@ public class LoginActivity extends AppCompatActivity {
 
 
         edtusuario = findViewById(R.id.edtusuario);
-        edtcontraseña=findViewById(R.id.edtcontraseña);
+        edtcontraseña=findViewById(R.id.edtcontrasenia);
 
 
 
     }
 
-public void Principal(View view){
+    public void Principal(View view){
 
-    ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
-    SQLiteDatabase db=conn.getWritableDatabase();
-    int USUARIO_DNI = Integer.parseInt(edtusuario.getText().toString());
-    String USUARIO_CONTRASENIA = edtcontraseña.getText().toString();
-    fila = db.rawQuery( "SELECT dni,contrasenia,nombre,apellidopaterno,apellidomaterno FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
+        SQLiteDatabase db=conn.getWritableDatabase();
+        int USUARIO_DNI = Integer.parseInt(edtusuario.getText().toString());
+        String USUARIO_CONTRASENIA = edtcontraseña.getText().toString();
+        fila = db.rawQuery( "SELECT dni,contrasenia,nombre,apellidopaterno,apellidomaterno FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
 
-    if(fila.moveToFirst()){
-        int usuario=Integer.parseInt(fila.getString(0));
-        System.out.println("usuario : "+usuario);
-        String password=fila.getString(1);
-        String DNIUSUARIO =Integer.toString(usuario);
-        System.out.println("password : "+password);
-        String nombre=fila.getString(2);
-        System.out.println("nombre : "+nombre);
-        String apellidopaterno=fila.getString(3);
-        System.out.println("apellido paterno : "+apellidopaterno);
-        String apellidomaterno=fila.getString(4);
-        System.out.println("apellido materno : "+apellidomaterno);
-        sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
-        Gdni=sharedPreferences.edit();
-        Gdni.putString("USUARIO_DNI",DNIUSUARIO);
-        Gdni.putString("USUARIO_NOMBRE",nombre);
-        Gdni.putString("USUARIO_APATERNO",apellidopaterno);
-        Gdni.putString("USUARIO_AMATERNO",apellidomaterno);
-        Gdni.apply();
+        if(fila.moveToFirst()){
+            int usuario=Integer.parseInt(fila.getString(0));
+            String password=fila.getString(1);
+            String DNIUSUARIO =Integer.toString(usuario);
+            String nombre=fila.getString(2);
+            String apellidopaterno=fila.getString(3);
+            String apellidomaterno=fila.getString(4);
+            sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
+            Gdni=sharedPreferences.edit();
+            Gdni.putString("USUARIO_DNI",DNIUSUARIO);
+            Gdni.putString("USUARIO_NOMBRE",nombre);
+            Gdni.putString("USUARIO_APATERNO",apellidopaterno);
+            Gdni.putString("USUARIO_AMATERNO",apellidomaterno);
+            Gdni.apply();
 
-        if(USUARIO_DNI==usuario&&USUARIO_CONTRASENIA.equals(password)){
+            if(USUARIO_DNI==usuario&&USUARIO_CONTRASENIA.equals(password)){
 
-            Intent i =new Intent(this, PrincipalActivity.class);
-            startActivity(i);
-            edtusuario.setText("");
-            edtcontraseña.setText("");
 
+
+                Intent i =new Intent(this, PrincipalActivity.class);
+                startActivity(i);
+                edtusuario.setText("");
+                edtcontraseña.setText("");
+
+
+            }
+
+        }else {
+            Toast.makeText(getApplicationContext(),"USUARIO O CONSTRASEÑA INVALIDOS ",Toast.LENGTH_SHORT).show();
 
         }
-    }else {
-        Toast.makeText(getApplicationContext(),"USUARIO O CONSTRASEÑA INVALIDOS ",Toast.LENGTH_SHORT).show();
+
+
+
+
 
     }
-
-       
-
-
-
-}
-
 
     public void Olvidemicontraseña(View view){
         Intent i =new Intent(this, Olvidemicontraseña.class);
@@ -99,7 +96,29 @@ public void Principal(View view){
         Intent i =new Intent(this, RegistrarActivity.class);
         startActivity(i);
     }
+    public void Administrador(View view){
+        int USUARIO_DNI = Integer.parseInt(edtusuario.getText().toString());
+        String USUARIO_CONTRASENIA = edtcontraseña.getText().toString();
+        if(USUARIO_DNI==404&&USUARIO_CONTRASENIA.equals("admin")){
 
+            Intent i =new Intent(this, AdministradorActivity.class);
+            startActivity(i);
+            edtusuario.setText("");
+            edtcontraseña.setText("");
+
+
+        }else{
+            Toast.makeText(getApplicationContext(),"ADMINISTRADOR O CONSTRASEÑA INVALIDOS ",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
+
+    public void Registrarmedico(View view){
+        Intent i =new Intent(this, RegistrarMedico.class);
+        startActivity(i);
+    }
 
 
 }

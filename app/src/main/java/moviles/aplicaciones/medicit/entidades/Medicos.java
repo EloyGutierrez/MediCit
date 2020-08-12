@@ -3,28 +3,26 @@ package moviles.aplicaciones.medicit.entidades;
 import java.util.Date;
 
 public class Medicos {
-    private int id;
+    private String id;
     private String nombre;
     private String apellidopaterno;
     private String apellidomaterno;
-    private String dni;
     private String especialidad;
     private String sexo;
-    private Date fechadenacimiento;
+    private String fechadenacimiento;
     private String correo;
     private String direccion;
     private String celular;
 
     public Medicos(){
-        
+
     }
 
-    public Medicos(int id, String nombre, String apellidopaterno, String apellidomaterno, String dni, String especialidad, String sexo, Date fechadenacimiento, String correo, String direccion, String celular) {
+    public Medicos(String id, String nombre, String apellidopaterno, String apellidomaterno, String especialidad, String sexo, String fechadenacimiento, String correo, String direccion, String celular) {
         this.id = id;
         this.nombre = nombre;
         this.apellidopaterno = apellidopaterno;
         this.apellidomaterno = apellidomaterno;
-        this.dni = dni;
         this.especialidad = especialidad;
         this.sexo = sexo;
         this.fechadenacimiento = fechadenacimiento;
@@ -33,11 +31,11 @@ public class Medicos {
         this.celular = celular;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -65,14 +63,6 @@ public class Medicos {
         this.apellidomaterno = apellidomaterno;
     }
 
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
     public String getEspecialidad() {
         return especialidad;
     }
@@ -89,11 +79,11 @@ public class Medicos {
         this.sexo = sexo;
     }
 
-    public Date getFechadenacimiento() {
+    public String getFechadenacimiento() {
         return fechadenacimiento;
     }
 
-    public void setFechadenacimiento(Date fechadenacimiento) {
+    public void setFechadenacimiento(String fechadenacimiento) {
         this.fechadenacimiento = fechadenacimiento;
     }
 

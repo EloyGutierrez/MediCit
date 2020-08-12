@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".AdministradorActivity">
 
+    <Button
+        android:id="@+id/btnRegistrarMedicos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:text="Registrar Medicos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <Button
+        android:id="@+id/btnlistarmedicos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="12dp"
+        android:text="LISTAR MEDICOS"
+        app:layout_constraintStart_toStartOf="@+id/btnRegistrarMedicos"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarMedicos" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:text="Area del administrador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
