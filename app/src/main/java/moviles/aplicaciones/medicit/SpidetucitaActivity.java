@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
@@ -29,11 +30,15 @@ import java.util.Objects;
 
 public class SpidetucitaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     Button btnfecha;
-    SharedPreferences sharedPreferences;
-    private ListView listamedicos;
-    ListAdapter myAdapter;
-    private List<Medicos> myList = new ArrayList<>();
     Cursor filamedicos;
+    SharedPreferences sharedPreferences;
+    ListView listmed;
+    ListAdapter myAdapter;
+    ConexionSQLiteHelper con;
+    private List<Medicos> myList = new ArrayList<>();
+    ArrayList<Medicos> especialidadLista;
+
+
     ArrayList<String> listaInformacion;
     ArrayList<Medicos> listaMedicos;
 
@@ -43,16 +48,24 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_spidetucita);
 
         btnfecha = findViewById(R.id.btnFecha);
-        listamedicos = findViewById(R.id.lvmedicos);
+        listmed = findViewById(R.id.lvmedicos);
 
 
 
         Calendar cal = Calendar.getInstance();
         int anio1 = cal.get(Calendar.YEAR);
-         int mes1 = cal.get(Calendar.MONTH);
+        int mes1 = cal.get(Calendar.MONTH);
         int dia1 = cal.get(Calendar.DAY_OF_MONTH);
         final String fechahoy=dia1+"/"+mes1+"/"+anio1;
         btnfecha.setText("Hoy : "+fechahoy);
+
+
+        listarmedicos();
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
+        listmed.setAdapter(adapter);
+
+
+
 
         btnfecha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,19 +77,22 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
                 DatePickerDialog datePickerDialog= new DatePickerDialog(SpidetucitaActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    String fecha= dayOfMonth+"/"+month+"/"+year;
+                        String fecha= dayOfMonth+"/"+month+"/"+year;
                         btnfecha.setText(fecha);
+                        String fechacrearcita = btnfecha.getText().toString();
+                        System.out.println("la fecha es: "+fechacrearcita);
+                        //listamedicos.setOnItemClickListener(SpidetucitaActivity.this);
+
+                        // myList.add(new Medicos(808080,"Gaston","Meneces","Sicha","masculino","Odontologia","masculino",null,"gaston@gmail.com","av los laureles",95623));
+
+                        // myAdapter=new ListAdapter(SpidetucitaActivity.this, R.layout.item_row,myList);
+                        //listamedicos.setAdapter(myAdapter);
                     }
                 },anio,mes,dia);
                 datePickerDialog.show();
             }
         });
 
-        //crear cita
-        String fechacrearcita = btnfecha.getText().toString();
-        System.out.println("la fecha es: "+fechacrearcita);
-        myAdapter=new ListAdapter(this, R.layout.item_row,myList);
-        listamedicos.setAdapter(myAdapter);
 
 
 
@@ -135,7 +151,7 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
             medico.setApellidomaterno(filamedicos.getString(2));
             medico.setEspecialidad(filamedicos.getString(3));
             medico.setCelular(filamedicos.getString(4));
-            myList.add(medico);
+            listaMedicos.add(medico);
         }
         obtenerlista();
         System.out.println("se ejecuto listarmedico();");
@@ -143,10 +159,11 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
 
     private void obtenerlista() {
         listaInformacion=new ArrayList<String>();
-        for (int i=0; i<myList.size();i++){
-            listaInformacion.add(myList.get(i).getNombre()+"-"+myList.get(i).getApellidopaterno()+"-"+myList.get(i).getApellidomaterno()+"-"+myList.get(i).getEspecialidad()+"-"+myList.get(i).getCelular());
+        for (int i=0; i<listaMedicos.size();i++){
+            listaInformacion.add(listaMedicos.get(i).getNombre()+"-"+listaMedicos.get(i).getApellidopaterno()+"-"+listaMedicos.get(i).getApellidomaterno()+"-"+listaMedicos.get(i).getEspecialidad()+"-"+listaMedicos.get(i).getCelular());
 
         }
     }
+
 
 }
