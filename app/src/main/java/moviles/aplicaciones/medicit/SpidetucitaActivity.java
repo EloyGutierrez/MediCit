@@ -59,10 +59,14 @@ public class SpidetucitaActivity extends AppCompatActivity  {
                 Toast.makeText(SpidetucitaActivity.this,"Elemento clicado :  "+position,Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(SpidetucitaActivity.this,CitaActivity.class);
                 intent.putExtra("DNI_MEDICO",myAdapter.getItem(position).getId());
+                intent.putExtra("NOM_MEDICO",myAdapter.getItem(position).getNombre());
+                intent.putExtra("APP_MEDICO",myAdapter.getItem(position).getApellidopaterno());
+                intent.putExtra("APM_MEDICO",myAdapter.getItem(position).getApellidomaterno());
                 intent.putExtra("DNI_USUARIO",DNI_USUARIO);
                 intent.putExtra("ESP_MEDICO",myAdapter.getItem(position).getEspecialidad());
                 intent.putExtra("SEG_USUARIO",SEG_USUARIO);
                 intent.putExtra("FEC_CITA",FEC_CITA);
+                intent.putExtra("CEL_MEDICO",myAdapter.getItem(position).getCelular());
                 startActivity(intent);
 
             }
@@ -80,13 +84,6 @@ public class SpidetucitaActivity extends AppCompatActivity  {
 
         myAdapter = new ListAdapter(SpidetucitaActivity.this,R.layout.item_row,myList);
         listmed.setAdapter(myAdapter);
-
-
-
-
-
-
-
 
 
         btnfecha.setOnClickListener(new View.OnClickListener() {
@@ -115,39 +112,6 @@ public class SpidetucitaActivity extends AppCompatActivity  {
 
 
     }
-
-
-
-    public void crearCita(){
-        String fechacrearcita = btnfecha.getText().toString();
-        System.out.println(fechacrearcita);
-
-        //recibiendo los datos de sharedpreference dni
-        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((SpidetucitaActivity.this.getApplicationContext())));
-        String dni=sharedPreferences.getString("USUARIO_DNI","dni defecto");
-
-        //recibiendo los datos de la especialidad
-        String especialidad=sharedPreferences.getString("PTC_ESPECIALIDAD","especialidad defecto");
-        System.out.println("la especialidad Spidetucita : "+especialidad);
-        System.out.println("dni SpidetucitaActivity : " +dni);
-
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(SpidetucitaActivity.this,"bd_citas",null,1);
-
-        //abriendo la base de datos para editar
-        SQLiteDatabase db=conn.getWritableDatabase();
-        final ContentValues values=new ContentValues();
-        values.put(Utilidades.CITA_DNI,dni);
-        values.put(Utilidades.CITA_MEDICO,"mario garcia gallegos");
-        values.put(Utilidades.CITA_PRECIO,"18.00");
-        values.put(Utilidades.CITA_ESPECIALIDAD,especialidad);
-        values.put(Utilidades.CITA_FECHA,fechacrearcita);
-        Long idResultante=db.insert(Utilidades.TABLA_CITA,Utilidades.CITA_ID,values);
-        Toast.makeText(getApplicationContext(),"Id Registro CITA: "+idResultante,Toast.LENGTH_SHORT).show();
-        System.out.println(idResultante);
-        System.out.println(values);
-        db.close();
-    }
-
 
     public void listarmedicos() {
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_medicos", null, 1);
