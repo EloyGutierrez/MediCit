@@ -15,6 +15,13 @@ public class Cita {
     public Cita() {
     }
 
+    public Cita(String medico, String precio, String especialidad, String fecha) {
+        this.medico = medico;
+        this.precio = precio;
+        this.especialidad = especialidad;
+        this.fecha = fecha;
+    }
+
     public Cita(int id, String medico, String dni, String precio, String especialidad, String fecha) {
         this.id = id;
         this.medico = medico;

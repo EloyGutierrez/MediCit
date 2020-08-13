@@ -147,10 +147,7 @@ public class SpidetucitaActivity extends AppCompatActivity  {
         }
     }
 
-    public void llamarmedico(){
-        Toast.makeText(this,"llamando medico ",Toast.LENGTH_LONG).show();
 
-    }
 
 
 }
