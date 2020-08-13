@@ -1,5 +1,6 @@
 package moviles.aplicaciones.medicit;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,7 +50,13 @@ public class MiscitasFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(),"elemento selecionado :  "+position,Toast.LENGTH_LONG).show();
-
+                Intent intent = new Intent(getContext(),DetallesCitaActivity.class);
+                intent.putExtra("ID_MEDICO",myAdapter.getItem(position).getMedico());
+                intent.putExtra("NOM_USUARIO",myAdapter.getItem(position).getDni());
+                intent.putExtra("ESP_MEDICO",myAdapter.getItem(position).getEspecialidad());
+                intent.putExtra("FEC_CITA",myAdapter.getItem(position).getFecha());
+                intent.putExtra("CIT_PRECIO",myAdapter.getItem(position).getPrecio());
+                startActivity(intent);
             }
         });
 

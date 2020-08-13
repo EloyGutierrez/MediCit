@@ -8,7 +8,7 @@
     android:id="@+id/citaprincipal">
 
     <Button
-        android:id="@+id/btnCoordinarHora"
+        android:id="@+id/btnCancelarcita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtFechacita" />
 
     <Button
-        android:id="@+id/btnRegistraCita"
+        android:id="@+id/btnVolverInicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -31,8 +31,8 @@
         android:background="@color/colorPrimary"
         android:text="Registrar Cita "
         android:textColor="@color/colorblanco"
-        app:layout_constraintStart_toStartOf="@+id/btnCoordinarHora"
-        app:layout_constraintTop_toBottomOf="@+id/btnCoordinarHora" />
+        app:layout_constraintStart_toStartOf="@+id/btnCancelarcita"
+        app:layout_constraintTop_toBottomOf="@+id/btnCancelarcita" />
 
     <TextView
         android:id="@+id/area"

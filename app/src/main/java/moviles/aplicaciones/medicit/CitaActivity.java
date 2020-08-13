@@ -3,14 +3,10 @@ package moviles.aplicaciones.medicit;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import moviles.aplicaciones.medicit.interfaces.IComunicaFragments;
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
 import android.Manifest;
-import android.app.Activity;
-import android.app.FragmentManagerNonConfig;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,8 +19,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
 
@@ -54,8 +48,8 @@ public class CitaActivity extends AppCompatActivity {
         detalless = findViewById(R.id.detalless);
         fechas = findViewById(R.id.fecha);
 
-        btnLllamar=findViewById(R.id.btnCoordinarHora);
-        btnRegistrar=findViewById(R.id.btnRegistraCita);
+        btnLllamar=findViewById(R.id.btnCancelarcita);
+        btnRegistrar=findViewById(R.id.btnVolverInicio);
         //RECIBIENDO LOS DATOS DEL MEDICO
         String nombremedico=getIntent().getStringExtra("NOM_MEDICO");
         String apellidopaternomedico=getIntent().getStringExtra("APP_MEDICO");
