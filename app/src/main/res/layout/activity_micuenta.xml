@@ -11,9 +11,9 @@
         android:layout_height="0dp"
         android:layout_marginStart="110dp"
         android:layout_marginTop="31dp"
-        android:layout_marginBottom="510dp"
+        android:layout_marginBottom="60dp"
         android:contentDescription="TODO"
-        app:layout_constraintBottom_toTopOf="@+id/btnatras"
+        app:layout_constraintBottom_toTopOf="@+id/tv_dni"
         app:layout_constraintEnd_toStartOf="@+id/cargarimagen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,7 +21,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtdni"
+        android:id="@+id/tv_dni"
         android:layout_width="230dp"
         android:layout_height="0dp"
         android:layout_marginBottom="30dp"
@@ -30,14 +30,14 @@
         android:hint="DNI"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/edtnombre"
+        app:layout_constraintBottom_toTopOf="@+id/tv_nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cargarimagen"
+        app:layout_constraintTop_toBottomOf="@+id/imagenid"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtnombre"
+        android:id="@+id/tv_nombre"
         android:layout_width="230dp"
         android:layout_height="0dp"
         android:layout_marginBottom="24dp"
@@ -46,14 +46,14 @@
         android:hint="Nombres"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/edtapellidopaterno"
+        app:layout_constraintBottom_toTopOf="@+id/tv_apellidopaterno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtdni"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dni"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtapellidopaterno"
+        android:id="@+id/tv_apellidopaterno"
         android:layout_width="230dp"
         android:layout_height="0dp"
         android:layout_marginBottom="21dp"
@@ -62,14 +62,14 @@
         android:hint="Apellido paterno"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/edtapellidomaterno"
+        app:layout_constraintBottom_toTopOf="@+id/tv_apellidomaterno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtnombre"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtapellidomaterno"
+        android:id="@+id/tv_apellidomaterno"
         android:layout_width="230dp"
         android:layout_height="0dp"
         android:layout_marginBottom="15dp"
@@ -78,14 +78,14 @@
         android:hint="Apellido materno"
         android:inputType="textPersonName"
         android:textColorHint="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/edtcorreo"
+        app:layout_constraintBottom_toTopOf="@+id/tv_correo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtapellidopaterno"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apellidopaterno"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtcorreo"
+        android:id="@+id/tv_correo"
         android:layout_width="230dp"
         android:layout_height="0dp"
         android:layout_marginBottom="24dp"
@@ -96,14 +96,14 @@
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtcelular"
+        app:layout_constraintBottom_toTopOf="@+id/tv_celular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtapellidomaterno"
+        app:layout_constraintTop_toBottomOf="@+id/tv_apellidomaterno"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edtcelular"
+        android:id="@+id/tv_celular"
         android:layout_width="230dp"
         android:layout_height="0dp"
         android:layout_marginBottom="14dp"
@@ -114,10 +114,10 @@
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnactualizar"
+        app:layout_constraintBottom_toTopOf="@+id/btnatras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtcorreo"
+        app:layout_constraintTop_toBottomOf="@+id/tv_correo"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -133,16 +133,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnatras"
-        app:layout_constraintTop_toBottomOf="@+id/edtcelular"
+        app:layout_constraintTop_toBottomOf="@+id/cargarimagen"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnatras"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:text="ATRAS"
         android:textColor="@color/colorPrimary"
@@ -150,7 +150,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnactualizar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenid"
+        app:layout_constraintTop_toBottomOf="@+id/tv_celular"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -159,10 +159,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="101dp"
         android:layout_marginEnd="83dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="488dp"
         android:clickable="true"
         android:onClick="onclick"
-        app:layout_constraintBottom_toTopOf="@+id/edtdni"
+        app:layout_constraintBottom_toTopOf="@+id/btnactualizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagenid"
         app:layout_constraintTop_toTopOf="parent"

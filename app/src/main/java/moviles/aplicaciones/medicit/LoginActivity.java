@@ -14,6 +14,8 @@ import android.widget.Toast;
 import org.json.JSONObject;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import moviles.aplicaciones.medicit.entidades.Usuario;
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
@@ -23,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     ConexionSQLiteHelper conn;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor Gdni;
+    private Usuario objusuario;
 
 
     @Override
