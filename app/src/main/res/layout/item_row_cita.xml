@@ -14,14 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="150dp"
         android:text="TextView" />
     <TextView
         android:id="@+id/EDTPRECIO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="170dp"
+        android:layout_marginLeft="250dp"
         android:text="TextView" />
     <TextView
         android:id="@+id/EDTFECHA"

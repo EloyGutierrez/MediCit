@@ -1,18 +1,25 @@
 package moviles.aplicaciones.medicit.utilidades;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import moviles.aplicaciones.medicit.R;
+import moviles.aplicaciones.medicit.SpidetucitaActivity;
 import moviles.aplicaciones.medicit.entidades.Cita;
+import moviles.aplicaciones.medicit.entidades.Medicos;
 
 public class ListAdapterCita extends ArrayAdapter<Cita> {
     private List<Cita> myList;
@@ -37,7 +44,7 @@ public class ListAdapterCita extends ArrayAdapter<Cita> {
         Cita cita= myList.get(position);
 
         TextView medico = view.findViewById(R.id.EDTMEDICO);
-        medico.setText(cita.getMedico());
+        medico.setText("Detalles");
         TextView precio = view.findViewById(R.id.EDTPRECIO);
         precio.setText(cita.getPrecio());
         TextView especialidad = view.findViewById(R.id.EDTESPECIALIDAD1);
@@ -48,6 +55,8 @@ public class ListAdapterCita extends ArrayAdapter<Cita> {
 
         return view;
     }
+
+
 
 
 }

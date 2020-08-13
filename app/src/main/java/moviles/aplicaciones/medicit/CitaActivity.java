@@ -32,6 +32,7 @@ public class CitaActivity extends AppCompatActivity {
     TextView medicoid,medicoespespecialidad,usuariodni,usuarioseguro,fecha;
     Button btnLllamar,btnRegistrar;
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor Gdni;
     TextView detalles,dr,area,paciente,detalless,fechas;
 
     @Override

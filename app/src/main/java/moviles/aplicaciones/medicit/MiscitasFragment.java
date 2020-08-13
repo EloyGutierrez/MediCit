@@ -8,10 +8,12 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +33,6 @@ public class MiscitasFragment extends Fragment {
     ListView listacitas;
 
     Cursor filacitas;
-    ListView listmed;
     ListAdapterCita myAdapter;
     List<Cita> myList = new ArrayList<>();
     ArrayList<Cita> listaCitas;
@@ -44,6 +45,14 @@ public class MiscitasFragment extends Fragment {
         nombreusuario= view.findViewById(R.id.edtNombreUsu);
         listacitas = view.findViewById(R.id.lvcitasmedicas);
 
+        listacitas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(),"elemento selecionado :  "+position,Toast.LENGTH_LONG).show();
+
+            }
+        });
+
         sharedPreferences= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((getActivity().getApplicationContext())));
         String nombre=sharedPreferences.getString("USUARIO_NOMBRE","nombre defecto");
         String apellidopaterno=sharedPreferences.getString("USUARIO_APATERNO","nombre defecto");
@@ -51,7 +60,7 @@ public class MiscitasFragment extends Fragment {
 
         nombreusuario.setText(nombre+" "+apellidopaterno+" "+apellidomaterno);
 
-        listarmedicos();
+        listarcitas();
 
         myAdapter = new ListAdapterCita(getContext(),R.layout.item_row_cita,myList);
         listacitas.setAdapter(myAdapter);
@@ -59,9 +68,11 @@ public class MiscitasFragment extends Fragment {
 
 
 
+
+
         return view;
     }
-    public void listarmedicos() {
+    public void listarcitas() {
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(getContext(), "bd_citas", null, 1);
         SQLiteDatabase db = conn.getWritableDatabase();
         Cita cita =null;
@@ -81,13 +92,13 @@ public class MiscitasFragment extends Fragment {
             cita.setFecha(filacitas.getString(3));
             listaCitas.add(cita);
         }
+
         obtenerlista();
         System.out.println("se ejecuto listarcitas();");
     }
 
     private void obtenerlista() {
         for (int i=0; i<listaCitas.size();i++){
-
             myList.add(new Cita(listaCitas.get(i).getMedico(),listaCitas.get(i).getPrecio(),listaCitas.get(i).getEspecialidad(),listaCitas.get(i).getFecha()));
 
         }
