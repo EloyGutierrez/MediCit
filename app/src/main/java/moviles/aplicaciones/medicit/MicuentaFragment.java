@@ -77,6 +77,8 @@ public class MicuentaFragment extends Fragment {
 
                 if (contrasenia.equals(contraseniaa)){
                     actualizarUsuario();
+                    Intent intent= new Intent(getContext(),LoginActivity.class);
+                    startActivity(intent);
                 }else {
                     Toast.makeText(getContext(),"Las contraseñas no coinciden",Toast.LENGTH_LONG).show();
                 }
@@ -147,6 +149,7 @@ public class MicuentaFragment extends Fragment {
         edtcorreo.setText(correo);
         edtcelular.setText(celular);
         edtcontrasenia.setText(pass);
+        edtcontraseniaa.setText(pass);
 
 
 
