@@ -28,19 +28,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class SpidetucitaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class SpidetucitaActivity extends AppCompatActivity  {
     Button btnfecha;
     Cursor filamedicos;
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor Mdni;
     ListView listmed;
     ListAdapter myAdapter;
-    ConexionSQLiteHelper con;
-    private List<Medicos> myList = new ArrayList<>();
-    ArrayList<Medicos> especialidadLista;
-
-
-    ArrayList<String> listaInformacion;
+    List<Medicos> myList = new ArrayList<>();
     ArrayList<Medicos> listaMedicos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +47,31 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
         btnfecha = findViewById(R.id.btnFecha);
         listmed = findViewById(R.id.lvmedicos);
 
+        listmed.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                sharedPreferences= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((SpidetucitaActivity.this.getApplicationContext())));
+                String DNI_USUARIO=sharedPreferences.getString("USUARIO_DNI","dni defecto");
+                String SEG_USUARIO=sharedPreferences.getString("USUARIO_SEGURO","dni defecto");
+                String FEC_CITA = btnfecha.getText().toString();
+
+
+                Toast.makeText(SpidetucitaActivity.this,"Elemento clicado :  "+position,Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SpidetucitaActivity.this,CitaActivity.class);
+                intent.putExtra("DNI_MEDICO",myAdapter.getItem(position).getId());
+                intent.putExtra("NOM_MEDICO",myAdapter.getItem(position).getNombre());
+                intent.putExtra("APP_MEDICO",myAdapter.getItem(position).getApellidopaterno());
+                intent.putExtra("APM_MEDICO",myAdapter.getItem(position).getApellidomaterno());
+                intent.putExtra("DNI_USUARIO",DNI_USUARIO);
+                intent.putExtra("ESP_MEDICO",myAdapter.getItem(position).getEspecialidad());
+                intent.putExtra("SEG_USUARIO",SEG_USUARIO);
+                intent.putExtra("FEC_CITA",FEC_CITA);
+                intent.putExtra("CEL_MEDICO",myAdapter.getItem(position).getCelular());
+                startActivity(intent);
+
+            }
+        });
+
 
 
         Calendar cal = Calendar.getInstance();
@@ -58,13 +80,10 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
         int dia1 = cal.get(Calendar.DAY_OF_MONTH);
         final String fechahoy=dia1+"/"+mes1+"/"+anio1;
         btnfecha.setText("Hoy : "+fechahoy);
-
-
         listarmedicos();
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
-        listmed.setAdapter(adapter);
 
-
+        myAdapter = new ListAdapter(SpidetucitaActivity.this,R.layout.item_row,myList);
+        listmed.setAdapter(myAdapter);
 
 
         btnfecha.setOnClickListener(new View.OnClickListener() {
@@ -81,12 +100,8 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
                         btnfecha.setText(fecha);
                         String fechacrearcita = btnfecha.getText().toString();
                         System.out.println("la fecha es: "+fechacrearcita);
-                        //listamedicos.setOnItemClickListener(SpidetucitaActivity.this);
 
-                        // myList.add(new Medicos(808080,"Gaston","Meneces","Sicha","masculino","Odontologia","masculino",null,"gaston@gmail.com","av los laureles",95623));
 
-                        // myAdapter=new ListAdapter(SpidetucitaActivity.this, R.layout.item_row,myList);
-                        //listamedicos.setAdapter(myAdapter);
                     }
                 },anio,mes,dia);
                 datePickerDialog.show();
@@ -95,41 +110,6 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
 
 
 
-
-    }
-
-    public void crearCita(){
-        String fechacrearcita = btnfecha.getText().toString();
-        System.out.println(fechacrearcita);
-
-        //recibiendo los datos de sharedpreference dni
-        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((SpidetucitaActivity.this.getApplicationContext())));
-        String dni=sharedPreferences.getString("USUARIO_DNI","dni defecto");
-
-        //recibiendo los datos de la especialidad
-        String especialidad=sharedPreferences.getString("PTC_ESPECIALIDAD","especialidad defecto");
-        System.out.println("la especialidad Spidetucita : "+especialidad);
-        System.out.println("dni SpidetucitaActivity : " +dni);
-
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(SpidetucitaActivity.this,"bd_citas",null,1);
-
-        //abriendo la base de datos para editar
-        SQLiteDatabase db=conn.getWritableDatabase();
-        final ContentValues values=new ContentValues();
-        values.put(Utilidades.CITA_DNI,dni);
-        values.put(Utilidades.CITA_MEDICO,"mario garcia gallegos");
-        values.put(Utilidades.CITA_PRECIO,"18.00");
-        values.put(Utilidades.CITA_ESPECIALIDAD,especialidad);
-        values.put(Utilidades.CITA_FECHA,fechacrearcita);
-        Long idResultante=db.insert(Utilidades.TABLA_CITA,Utilidades.CITA_ID,values);
-        Toast.makeText(getApplicationContext(),"Id Registro CITA: "+idResultante,Toast.LENGTH_SHORT).show();
-        System.out.println(idResultante);
-        System.out.println(values);
-        db.close();
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
     }
 
@@ -143,14 +123,15 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((SpidetucitaActivity.this.getApplicationContext())));
         String ESPECIALIDAD = sharedPreferences.getString("PTC_ESPECIALIDAD", "especialidad defecto");
 
-        filamedicos = db.rawQuery( "SELECT nombre,apellidopaterno,apellidomaterno,especialidad,celular FROM medicos WHERE especialidad='"+ESPECIALIDAD+"'",null);
+        filamedicos = db.rawQuery( "SELECT id,nombre,apellidopaterno,apellidomaterno,especialidad,celular FROM medicos WHERE especialidad='"+ESPECIALIDAD+"'",null);
         while (filamedicos.moveToNext()){
             medico = new Medicos();
-            medico.setNombre(filamedicos.getString(0));
-            medico.setApellidopaterno(filamedicos.getString(1));
-            medico.setApellidomaterno(filamedicos.getString(2));
-            medico.setEspecialidad(filamedicos.getString(3));
-            medico.setCelular(filamedicos.getString(4));
+            medico.setId(filamedicos.getString(0));
+            medico.setNombre(filamedicos.getString(1));
+            medico.setApellidopaterno(filamedicos.getString(2));
+            medico.setApellidomaterno(filamedicos.getString(3));
+            medico.setEspecialidad(filamedicos.getString(4));
+            medico.setCelular(filamedicos.getString(5));
             listaMedicos.add(medico);
         }
         obtenerlista();
@@ -158,12 +139,15 @@ public class SpidetucitaActivity extends AppCompatActivity implements AdapterVie
     }
 
     private void obtenerlista() {
-        listaInformacion=new ArrayList<String>();
         for (int i=0; i<listaMedicos.size();i++){
-            listaInformacion.add(listaMedicos.get(i).getNombre()+"-"+listaMedicos.get(i).getApellidopaterno()+"-"+listaMedicos.get(i).getApellidomaterno()+"-"+listaMedicos.get(i).getEspecialidad()+"-"+listaMedicos.get(i).getCelular());
+
+            String IDMEDICO =listaMedicos.get(i).getId();
+            myList.add(new Medicos(listaMedicos.get(i).getId(),listaMedicos.get(i).getNombre(),listaMedicos.get(i).getApellidopaterno(),listaMedicos.get(i).getApellidomaterno(),listaMedicos.get(i).getEspecialidad(),listaMedicos.get(i).getCelular()));
 
         }
     }
+
+
 
 
 }

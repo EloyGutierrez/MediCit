@@ -6,16 +6,23 @@ public class Cita {
 
     private int id;
     private String medico;
-    private  int dni;
+    private String dni;
     private String precio;
     private String especialidad;
-    private Date fecha;
+    private String fecha;
 
 
     public Cita() {
     }
 
-    public Cita(int id, String medico, int dni, String precio, String especialidad, Date fecha) {
+    public Cita(String medico, String precio, String especialidad, String fecha) {
+        this.medico = medico;
+        this.precio = precio;
+        this.especialidad = especialidad;
+        this.fecha = fecha;
+    }
+
+    public Cita(int id, String medico, String dni, String precio, String especialidad, String fecha) {
         this.id = id;
         this.medico = medico;
         this.dni = dni;
@@ -40,11 +47,11 @@ public class Cita {
         this.medico = medico;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -64,11 +71,11 @@ public class Cita {
         this.especialidad = especialidad;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 }

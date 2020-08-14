@@ -8,8 +8,11 @@ import moviles.aplicaciones.medicit.utilidades.Utilidades;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,6 +31,12 @@ public class ListarMedicosActivity extends AppCompatActivity {
         listarmedicos();
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
         lisdemedicos.setAdapter(adapter);
+        lisdemedicos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ListarMedicosActivity.this,"Elemento clicado :  "+position,Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 

@@ -10,10 +10,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import moviles.aplicaciones.medicit.interfaces.IComunicaFragments;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Objects;
 
 public class PrincipalActivity extends AppCompatActivity implements IComunicaFragments, NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
@@ -22,6 +27,7 @@ public class PrincipalActivity extends AppCompatActivity implements IComunicaFra
     NavigationView navigationView;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,10 +103,16 @@ public class PrincipalActivity extends AppCompatActivity implements IComunicaFra
         }
 
         if(item.getItemId() == R.id.cerrarsesion){
+            sharedPreferences= PreferenceManager.getDefaultSharedPreferences(Objects.requireNonNull((this.getApplicationContext())));
+            sharedPreferences.edit().clear().apply();
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container_fragment,new cerrarsesion());
             fragmentTransaction.commit();
+
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity(intent);
+
         }
         return false;
     }

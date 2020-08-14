@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/citaprincipal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CitaActivity">
+
+    <Button
+        android:id="@+id/btnCancelarcita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="56dp"
+        android:background="@color/colorPrimary"
+        android:drawableLeft="@android:drawable/stat_sys_phone_call"
+        android:text="Cancelar Cita     "
+        android:textColor="@color/colorblanco"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverInicio"
+        app:layout_constraintStart_toStartOf="@+id/btnVolverInicio" />
+
+    <Button
+        android:id="@+id/btnVolverInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="94dp"
+        android:background="@color/colorPrimary"
+        android:drawableLeft="@drawable/ic_baseline_home_24"
+        android:text="volver al inicio "
+        android:textColor="@color/colorblanco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="Area :"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtEspecialidaddelmedico"
+        app:layout_constraintStart_toStartOf="@+id/paciente" />
+
+    <TextView
+        android:id="@+id/edtUsuarioDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="26dp"
+        android:text="usuario dni"
+        app:layout_constraintBottom_toTopOf="@+id/detalless"
+        app:layout_constraintStart_toEndOf="@+id/paciente" />
+
+    <TextView
+        android:id="@+id/detalless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detalles del seguro :"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtUsuarioseguro"
+        app:layout_constraintStart_toStartOf="@+id/paciente" />
+
+    <TextView
+        android:id="@+id/edtFechacita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="fecha"
+        app:layout_constraintEnd_toStartOf="@+id/edtUsuarioseguro"
+        app:layout_constraintStart_toStartOf="@+id/edtUsuarioseguro"
+        app:layout_constraintTop_toBottomOf="@+id/detalless" />
+
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Fecha: "
+        app:layout_constraintStart_toStartOf="@+id/detalless"
+        app:layout_constraintTop_toBottomOf="@+id/detalless" />
+
+    <TextView
+        android:id="@+id/edtUsuarioseguro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="120dp"
+        android:text="usuario seguro"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelarcita"
+        app:layout_constraintStart_toEndOf="@+id/detalless" />
+
+    <TextView
+        android:id="@+id/paciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:text="Paciente: "
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtUsuarioDNI"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Detalles de la cita medica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text="Cod. Medico"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtNombredelmedico"
+        app:layout_constraintStart_toStartOf="@+id/area" />
+
+    <TextView
+        android:id="@+id/edtNombredelmedico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="35dp"
+        android:text="Nombre del medico"
+        app:layout_constraintBottom_toTopOf="@+id/edtEspecialidaddelmedico"
+        app:layout_constraintStart_toEndOf="@+id/dr" />
+
+    <TextView
+        android:id="@+id/edtEspecialidaddelmedico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="31dp"
+        android:text="Especialidad del medico"
+        app:layout_constraintBottom_toTopOf="@+id/edtUsuarioDNI"
+        app:layout_constraintStart_toStartOf="@+id/edtUsuarioDNI" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

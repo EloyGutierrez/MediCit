@@ -2,37 +2,34 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-
     <TextView
-        android:id="@+id/EDTNOMBRE"
+        android:id="@+id/NOMBRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         android:text="TextView" />
     <TextView
-        android:id="@+id/EDTAPELLIDOPATERNO"
+        android:id="@+id/APELLLIDOPATERNO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="150dp"
         android:text="TextView" />
     <TextView
-        android:id="@+id/EDTAPELLIDOMATERNO"
+        android:id="@+id/APELLIDOMATERNO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="170dp"
+        android:layout_marginLeft="250dp"
         android:text="TextView" />
     <TextView
-        android:id="@+id/EDTESPECIALIDAD"
+        android:id="@+id/ESPECIALIDAD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:layout_marginLeft="50dp"
         android:text="TextView" />
-
     <TextView
         android:id="@+id/EDTCELULAR"
         android:layout_width="246dp"
@@ -44,13 +41,13 @@
         android:textAlignment="center"
         android:background="@color/colorPrimary"
         android:drawableLeft="@android:drawable/stat_sys_phone_call"
-        android:text="Requiere coordinacion telefónica  "
+        android:text="Contactar "
         android:textColor="@color/colorblanco" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
         android:layout_marginLeft="50dp" />
-
 
 </RelativeLayout>

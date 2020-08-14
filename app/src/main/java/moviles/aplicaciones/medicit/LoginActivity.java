@@ -14,8 +14,6 @@ import android.widget.Toast;
 import org.json.JSONObject;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import moviles.aplicaciones.medicit.entidades.Usuario;
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
@@ -25,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     ConexionSQLiteHelper conn;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor Gdni;
-    private Usuario objusuario;
 
 
     @Override
@@ -51,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         SQLiteDatabase db=conn.getWritableDatabase();
         int USUARIO_DNI = Integer.parseInt(edtusuario.getText().toString());
         String USUARIO_CONTRASENIA = edtcontraseña.getText().toString();
-        fila = db.rawQuery( "SELECT dni,contrasenia,nombre,apellidopaterno,apellidomaterno FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
+        fila = db.rawQuery( "SELECT dni,contrasenia,nombre,apellidopaterno,apellidomaterno,seguro FROM usuarios WHERE dni='"+USUARIO_DNI+"'AND contrasenia ='"+USUARIO_CONTRASENIA+"'",null);
 
         if(fila.moveToFirst()){
             int usuario=Integer.parseInt(fila.getString(0));
@@ -60,12 +57,14 @@ public class LoginActivity extends AppCompatActivity {
             String nombre=fila.getString(2);
             String apellidopaterno=fila.getString(3);
             String apellidomaterno=fila.getString(4);
+            String seguro=fila.getString(5);
             sharedPreferences=PreferenceManager.getDefaultSharedPreferences(this);
             Gdni=sharedPreferences.edit();
             Gdni.putString("USUARIO_DNI",DNIUSUARIO);
             Gdni.putString("USUARIO_NOMBRE",nombre);
             Gdni.putString("USUARIO_APATERNO",apellidopaterno);
             Gdni.putString("USUARIO_AMATERNO",apellidomaterno);
+            Gdni.putString("USUARIO_SEGURO",seguro);
             Gdni.apply();
 
             if(USUARIO_DNI==usuario&&USUARIO_CONTRASENIA.equals(password)){
@@ -115,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
 
 
 
