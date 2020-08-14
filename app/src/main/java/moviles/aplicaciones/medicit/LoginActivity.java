@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void Olvidemicontraseña(View view){
-        Intent i =new Intent(this, Olvidemicontraseña.class);
+        Intent i =new Intent(this, RecuperarCuentaActivity.class);
         startActivity(i);
     }
     public void Registrar(View view){
