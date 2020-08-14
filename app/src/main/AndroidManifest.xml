@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".DetallesCitaActivity"></activity>
+        <activity android:name=".RecuperarCuentaActivity"></activity>
+        <activity android:name=".DetallesCitaActivity" />
         <activity android:name=".CitaActivity" />
         <activity android:name=".ListarMedicosActivity" />
         <activity android:name=".AdministradorActivity" />
@@ -30,8 +31,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".Olvidemicontraseña" />
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

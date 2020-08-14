@@ -35,5 +35,7 @@
     <item
         android:id="@+id/cerrarsesion"
         android:icon="@drawable/ic_baseline_help_outline_24"
-        android:title="CERRAR SESIÓN" />
+        android:title="CERRAR SESIÓN"
+
+        />
 </menu>
