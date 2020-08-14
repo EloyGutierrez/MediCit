@@ -135,7 +135,7 @@ public class SpidetucitaActivity extends AppCompatActivity  {
             listaMedicos.add(medico);
         }
         obtenerlista();
-        System.out.println("se ejecuto listarmedico();");
+        System.out.println("se ejecutó listarmedico();");
     }
 
     private void obtenerlista() {
