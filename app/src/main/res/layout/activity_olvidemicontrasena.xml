@@ -5,31 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="3dp"
-        android:background="@drawable/estilos_cajas_de_texto"
-        android:text="REGRESAR"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button5"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnCContinuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="94dp"
+        android:layout_marginBottom="124dp"
         android:background="@drawable/estilos_cajas_de_texto"
         android:text="CONTINUAR"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3"
         tools:ignore="MissingConstraints" />
 
@@ -49,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="44dp"
-        android:layout_marginBottom="109dp"
+        android:layout_marginBottom="79dp"
         android:text="Tengo problemas, no reconozco mis datos."
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/btnCContinuar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2"
         tools:ignore="MissingConstraints" />
@@ -83,7 +70,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="23dp"
         android:text="OLVIDÉ MI CONTRASEÑA"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/textView22"
@@ -97,7 +84,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="67dp"
+        android:layout_marginBottom="66dp"
         android:justificationMode="inter_word"
         android:text="No te preocupes. Te enviaremos una nueva contraseña al buzón que indiques a continuación."
         android:textAlignment="center"

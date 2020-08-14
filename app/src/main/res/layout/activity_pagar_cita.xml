@@ -120,7 +120,7 @@
         tools:layout_editor_absoluteY="522dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnCContinuar"
         android:layout_width="125dp"
         android:layout_height="41dp"
         android:background="@drawable/estilos_cajas_de_texto"

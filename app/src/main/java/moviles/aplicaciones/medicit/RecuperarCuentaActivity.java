@@ -45,7 +45,7 @@ public class RecuperarCuentaActivity extends AppCompatActivity {
         Cursor fila = db.rawQuery( "SELECT celular,correo FROM usuarios WHERE dni='"+USUARIO_DNI+"'",null);
 
         if(fila.moveToFirst()){
-            int celular=Integer.parseInt(fila.getString(0));
+            String celular=fila.getString(0);
             String correo =fila.getString(1);
             Intent intent = new Intent(this,Olvidemicontraseña.class);
             System.out.println("llego datos : "+correo+celular);
