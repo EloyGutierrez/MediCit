@@ -1,16 +1,18 @@
 package moviles.aplicaciones.medicit;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,32 +21,48 @@ import android.widget.Toast;
 import moviles.aplicaciones.medicit.utilidades.ConexionSQLiteHelper;
 import moviles.aplicaciones.medicit.utilidades.Utilidades;
 
-import static androidx.core.provider.FontsContractCompat.FontRequestCallback.RESULT_OK;
+import static android.app.Activity.RESULT_OK;
 
-public class Micuenta extends AppCompatActivity {
 
+public class MicuentaFragment extends Fragment {
     EditText tv_dni, tv_nombre, tv_apellidopaterno, tv_apellidomaterno, tv_correo, tv_celular;
     Button btnactualizar;
     ImageView imagen;
 
     ConexionSQLiteHelper conn;
+    private LayoutInflater inflater;
+    private ViewGroup container;
+    private Bundle savedInstanceState;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_micuenta);
-        tv_dni = findViewById(R.id.tv_dni);
-        tv_nombre = findViewById(R.id.tv_nombre);
-        tv_apellidopaterno = findViewById(R.id.tv_apellidopaterno);
-        tv_apellidomaterno = findViewById(R.id.tv_apellidomaterno);
-        tv_correo = findViewById(R.id.tv_correo);
-        tv_celular = findViewById(R.id.tv_celular);
-        btnactualizar = findViewById(R.id.btnactualizar);
-        imagen = findViewById(R.id.imagenid);
+
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+
+        LayoutInflater i = getLayoutInflater();
+        View view= i.inflate(R.layout.fragment_micuenta,container,false);
+
+        conn = new ConexionSQLiteHelper(getContext(),"db_usuarios",null,1);
+
+        tv_dni = view.findViewById(R.id.tv_dni);
+        tv_nombre = view.findViewById(R.id.tv_nombre);
+        tv_apellidopaterno = view.findViewById(R.id.tv_apellidopaterno);
+        tv_apellidomaterno = view.findViewById(R.id.tv_apellidomaterno);
+        tv_correo = view.findViewById(R.id.tv_correo);
+        tv_celular = view.findViewById(R.id.tv_celular);
+        btnactualizar = view.findViewById(R.id.btnactualizar);
+        imagen = view.findViewById(R.id.imagenid);
+
+        return view;
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             Uri path = data.getData();
@@ -72,7 +90,6 @@ public class Micuenta extends AppCompatActivity {
         startActivityForResult(i.createChooser(i,"Seleccione la aplicación"),10);
     }
 
-
     private void actualizzarUsuario() {
         SQLiteDatabase db = conn.getWritableDatabase();
         String [] parametros={tv_dni.getText().toString()};
@@ -87,11 +104,7 @@ public class Micuenta extends AppCompatActivity {
         db.update(Utilidades.TABLA_USUARIO,values,Utilidades.CAMPO_DNI+"=?",parametros);
         Toast.makeText(getContext(),"el usuario se actualizo",Toast.LENGTH_LONG).show();
         db.close();
-
-
     }
 
-    private Context getContext() {
-        return null;
-    }
+
 }

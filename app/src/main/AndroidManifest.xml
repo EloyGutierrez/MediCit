@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Micuenta"></activity>
         <activity android:name=".ListarMedicosActivity" />
         <activity android:name=".AdministradorActivity" />
         <activity android:name=".RegistrarMedico" />

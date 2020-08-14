@@ -60,7 +60,8 @@ public class PrincipalActivity extends AppCompatActivity implements IComunicaFra
         if(item.getItemId() == R.id.mi_cuenta){
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
-            FragmentTransaction replace = fragmentTransaction.replace(R.id.container_fragment, new Configuracion());
+            FragmentTransaction replace;
+            replace = fragmentTransaction.replace(R.id.container_fragment, new MicuentaFragment());
             fragmentTransaction.commit();
 
         }
